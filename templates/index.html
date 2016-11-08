@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap.css') }}">
+
+	<script src="{{url_for('static', filename='jquery.js')}}"></script>
+	<script src="{{url_for('static', filename='bootstrap.js')}}"></script>
+	<title>Testing Python</title>
+	
+</head>
+<body>
+	<h4>{{client}}</h4>
+<nav>
+	<ul class="legacy-tab_container"></ul>
+	<li class="legacy-tab legacy-tab--active" id="topTab_policySetup_static">
+            <a class="legacy-tab__link">Policy Setup</a>
+    </li>
+</nav>
+<br>
+
+
+
+<ul class="folders" data-bind="foreach: folders" style="width:52.7%">
+    <li data-bind="text: $data,
+                   css: { selected: $data == $root.chosenFolderId()},
+                   click: $root.goToFolder"></li>
+
+</ul>
+
+
+<div data-bind="visible: chosenFolderId() == 'Insureds',
+				template : {name: chosenFolderId()}"></div>
+<div data-bind="visible: chosenFolderId() == 'Policy',
+				template : {name: chosenFolderId()}"></div>
+<div data-bind="visible: chosenFolderId() == 'Risks',
+				template : {name: chosenFolderId()}"></div>
+<div data-bind="visible: chosenFolderId() == 'Rating',
+				template : {name: chosenFolderId()}"></div>
+<div data-bind="visible: chosenFolderId() == 'Billing',
+				template : {name: chosenFolderId()}"></div>
+<div data-bind="visible: chosenFolderId() == 'Attachments',
+				template : {name: chosenFolderId()}"></div>										
+<div data-bind="visible: chosenFolderId() == 'Submit',
+				template : {name: chosenFolderId()}"></div>																				
+
+
+<!-- Start Insureds HTML Part ....  -->
+
+
+
+
+<script type="text/html" id="Insureds">
+	<br>
+
+
+	<div class="fatGreyTitles">Named Insureds</div>
+	<div id="howManyInsureds_wrap">
+        <button class="btn" data-bind="click: addInsureds">Add</button>
+        <input type="text"  data-bind="value: numberToAdd">
+        <span>Named Insureds to the Policy</span>
+    </div>
+
+   <hr>
+   
+    <ul data-bind="foreach: insureds" style="margin-left:100px;">
+		<div class="namedInsured_wrap">
+		   <div class="nI_title1" data-bind="text: title()"></div>
+		   <div class="contactInputAndInfoDisplay">
+		      <div class="contactName">
+		      		<button class="btn btn-danger" data-bind="visible: title() !== 'Primary Named Insured',click: $root.removeInsureds">X</button>
+                    <span class="littleGreyTitles">Name<br></span>                				
+                    	   <input id="test" type="text" class="contactEntry" data-bind="value: name"> 					                    
+		      </div>
+		   </div>
+		   <div class="nI_bottomLine"></div>		
+		</div>
+    </ul>
+
+	<div style="clear:left"></div>
+	<div class="fatGreyTitles additionalInterestsTitle">Additional Interests</div>
+
+	<div id="howManyAdditionalInterests_wrap">
+	        <a href="#" id="addAdditionalInterests" class="add"></a>
+	        <button class="btn" data-bind="click: addInterest">Add</button>
+	        <input type="text"  data-bind="value: numberOfInterestToAdd">
+	        <span>Additional Interests to the Policy</span>
+	</div>
+
+	<hr>
+    <ul data-bind="foreach: interests" style="margin-left:100px;">
+		<div class="namedInsured_wrap">
+		   <div class="nI_title1" data-bind="text: title()"></div>
+		   <div class="contactInputAndInfoDisplay">
+		      <div class="contactName">
+		      		<button class="btn btn-danger" data-bind="click: $root.removeInterest">X</button>
+                    <span class="littleGreyTitles">Name<br></span>                					<input type="text" class="contactEntry" value="">
+		      </div>
+		   </div>
+		   <div class="nI_bottomLine"></div>
+		</div>
+    </ul>
+	<div style="clear:left"></div>
+
+</script>
+
+
+
+
+<!-- End Insureds HTML Part ....  -->
+
+
+<script type="text/html" id="Policy">
+	<br>
+	<div class="fatGreyTitles">Policy Type</div>
+	<span class="fatGreyTitles">Select State</span>
+	<br><br>
+	<select style="margin-left:75px;" data-bind="options: states, value: chosenState"></select>
+	<br><br><br>
+	
+	<div data-bind="visible: chosenFolderId() == 'Policy'">	
+	<div class="radioGroup" data-bind="foreach: lines">
+			<a style="margin-left:73px;" href="#" data-bind="click: $root.openRadios" >X<i></a><span data-bind="text: $data"></span><br></i>
+	</div>	
+	<br><br><br>
+	<div id="policyTermContentWrap">
+        <div id="policyTermLabel">
+            <div class="fatGreyTitles">Policy Term</div>
+        </div>
+        <div id="plcy_effDate_wrap">
+            <div class="littleGreyTitles Label">Effective Date <span class="smallDate">(MM/DD/YYYY)</span></div>
+            <div id="plcy_effDate_inputsWrap">
+                <input type="text" name="month" class="monthAndDay notEmpty month" maxlength="2">
+                <input type="text" name="day" class="monthAndDay notEmpty day" maxlength="2">
+                <input type="text" name="year" class="year notEmpty" maxlength="4">
+            </div>
+            <div class="clearFloat"></div>
+        </div>
+        <div class="littleVertical"></div>
+        <div id="plcy_term_wrap">
+            <div class="littleGreyTitles">Term</div>
+            <select name="policyTerm" class=""><option value="1 Year">1 Year</option></select>
+        </div>
+
+        <div id="plcy_atRenewal_wrap">
+            <div class="littleGreyTitles">At Renewal Set Policy Term To:</div>
+            <select name="customTerm"><option value="1 Year">1 Year</option></select>
+        </div>
+
+        <div id="littleVertical2" class="littleVertical"></div>
+        <div id="plcy_expDate_wrap">
+            <div class="littleGreyTitles Label">Expiration Date <span class="smallDate">(MM/DD/YYYY)</span></div>
+            <div id="plcy_expDate_inputsWrap">
+                <input type="text" name="month" class="monthAndDay notEmpty month " maxlength="2">
+                <input type="text" name="day" class="monthAndDay notEmpty day " maxlength="2">
+                <input type="text" name="year" class="year notEmpty " maxlength="4">
+            </div>
+            <div style="clear:left"></div>
+        </div>
+        <div style="clear:left"></div>
+    </div>
+
+	<!--<button class="btn1">Slide up</button>|<button class="btn2">Slide down</button>-->
+<div class="fatGreyTitles">Underwriting Questions</div>
+<div id="underwritingMessage">If the below question is answered 'Yes', please discontinue the quote.</div>
+
+<ol data-bind="foreach: questions">
+	<li data-bind="text: $data"></li>
+</ol>
+	<div style="margin-left:74px;">
+    	<div><input type="radio" value="yes" data-bind="checked: checkUnderwriting"/> Yes</div>
+    	<div><input type="radio" value="no" data-bind="checked: checkUnderwriting"/> No</div>
+	</div>
+
+</script>
+
+
+
+
+
+
+<script type="text/html" id="Risks">
+	<br>
+
+	<div  class="fatGreyTitles">Primary Risk Locations</div>
+			<div class="container">
+				<div class="fatGreyTitles">Address</div>
+				<a href="#">Copy address from named insured</a>
+				<br>
+				<label>Address</label>
+				<input style="width:15%" class="form-control" type="text" placeholder="Address1">
+				<input style="width:15%" class="form-control" type="text" placeholder="Address2">
+				<br>
+				<label>Zip</label>
+				<input style="width:15%" class="form-control" type="text" placeholder="zip code">
+				<br>
+				<label>City</label>
+				<select style="width:15%" class="form-control" data-bind="options: cities">
+				</select>
+				<br>				
+			</div>
+
+			<div class="fatGreyTitles">Location Details<br></div>
+
+			<div class="container">
+				<label>City</label>
+				<select style="width:15%" class="form-control" data-bind="options: cities">
+				</select>
+				<label>City</label>
+				<select style="width:15%" class="form-control" data-bind="options: cities">
+				</select>
+				<label>City</label>
+				<select style="width:15%" class="form-control" data-bind="options: cities">
+				</select>
+				<label>Latitude</label>
+				<input style="width:15%" class="form-control" type="text" placeholder="Address1">
+				<label>Longtitude</label>
+				<input style="width:15%" class="form-control" type="text" placeholder="Address2">
+			</div>
+
+			<div class="fatGreyTitles">Mortgagee(s) &nbsp; <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#mortModal">
+				  Add
+				</button><br>
+			</div>	
+
+			<div  class="fatGreyTitles">Photo(s) &nbsp; <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#photoModal">
+			  Add
+			</button><br></div>						
+			<div  class="fatGreyTitles">E2Value &nbsp; <button class="btn btn-default">Go to E2Value</button><br></div>	
+			<div  class="fatGreyTitles"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+			  Add New Disclosure
+			</button></div>
+	
+</script>
+
+
+<!-- Modal for Adding a new Disclosure-->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center;">Insured Disclosure</h4>
+      </div>
+      <div class="modal-body">
+	        <div id="littleVertical2" class="littleVertical"></div>
+	        <div id="plcy_expDate_wrap">
+	            <div class="littleGreyTitles Label">Expiration Date <span class="smallDate">(MM/DD/YYYY)</span></div>
+	            <br>
+	            <div id="plcy_expDate_inputsWrap">
+	                <input type="text" name="month" class="monthAndDay notEmpty month " maxlength="2" data-bind="value: monthDisclosure">
+	                <input type="text" name="day" class="monthAndDay notEmpty day " maxlength="2" data-bind="value: dayDisclosure">
+	                <input type="text" name="year" class="year notEmpty " maxlength="4" data-bind="value: yearDisclosure" >
+	            </div>
+	            <div style="clear:left"></div>
+	            <br><br>
+	        <div class="littleGreyTitles Label">Description</div>
+	        <br>
+	        <textarea class="form-control" id="exampleTextarea" rows="3" data-bind="value: textDisclosure"></textarea>			  
+	        <br><div class="littleGreyTitles Label">Loss Amount</div><br>
+			<input class="form-control" type="number" id="example-tel-input" data-bind="value: amountDisclosure">
+			<br><div class="littleGreyTitles Label">Loss Cause</div><br>
+			<input class="form-control" type="text" id="example-tel-input" data-bind="value: causeDisclosure">
+	        </div>
+	        <div style="clear:left"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" data-bind="enable: canSave, click: sendDisclosure">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- End Modal for adding new Disclosure -->
+
+<!-- Start Modal for Adding Photo -->
+
+<div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center;">Insured Disclosure</h4>
+      </div>
+      <div class="modal-body">
+      	<div data-bind="foreach: files">
+      		<br>
+			<input data-bind="event: {change: $root.fileUpload}" type="file" accept="image/*" class="fileChooser"/>	        
+		</div>
+		<br>
+      	<button class="btn btn-success" data-bind="click: addnewPhoto">Add another</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End Modal for Photo -->
+
+
+<!-- Start Modal for Adding Mortgagee -->
+
+<div class="modal fade" id="mortModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel" style="text-align: center;">Insured Disclosure</h4>
+      </div>
+      <div class="modal-body">
+      		<h1>Todo This Modal For adding Mortgage</h1>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End Modal for Adding Mortgagee -->
+
+
+
+<div style="margin-left:300px;" data-bind="foreach: photosEncoded">
+		<img style="width:100px;height:100px;float:left;padding-right:10px;" class="myImage" data-bind="attr: {src: $data}"/>
+</div>
+
+
+<script type="text/html" id="Rating">
+	<br>
+	<div class="fatGreyTitles">Rating</div>
+</script>
+<script type="text/html" id="Billing">
+	<br>
+	<div class="fatGreyTitles">Billing</div>
+
+</script>
+<script type="text/html" id="Attachments">
+	<br>
+	<div class="fatGreyTitles">Attachments</div>
+</script>
+
+<script type="text/html" id="Submit">
+	<br>
+	<div class="fatGreyTitles">Submit</div>
+</script>
+
+
+
+
+
+<script src="{{url_for('static', filename='knockout.js')}}"></script>
+<script src="{{url_for('static', filename='newQuote.js')}}"></script>
+
+</body>
+</html>
+
