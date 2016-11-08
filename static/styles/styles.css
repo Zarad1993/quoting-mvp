@@ -1,0 +1,5467 @@
+body { font-family: Helvetica, Arial}
+.folders {background-color: #bbb; list-style-type: none; padding: 0; margin: 0; border-radius: 7px; 
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #d6d6d6), color-stop(0.4, #c0c0c0), color-stop(1,#a4a4a4)); 
+	margin: 10px 0 16px 0;
+	font-size: 0px;
+}
+.folders li:hover { background-color: #ddd; }    
+.folders li:first-child { border-left: none; border-radius: 7px 0 0 7px; }
+.folders li { font-size: 13px; font-weight: bold; display: inline-block; padding: 0.5em 1.5em; cursor: pointer; color: #444; text-shadow: #f7f7f7 0 1px 1px; border-left: 1px solid #ddd; border-right: 1px solid #888; }
+.folders li { *display: inline !important; } /* IE7 only */
+
+.folders .selected { background-color: #444 !important; color: white; text-shadow:none; border-right-color: #aaa; border-left: none; box-shadow:inset 1px 2px 6px #070707; }  
+
+.mails { width: 100%; table-layout:fixed; border-spacing: 0; }
+.mails thead { background-color: #bbb; font-weight: bold; color: #444; text-shadow: #f7f7f7 0 1px 1px; }
+.mails tbody tr:hover { cursor: pointer; background-color: #68c !important; color: White; }
+.mails th, .mails td { text-align:left; padding: 0.4em 0.3em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mails th { border-left: 1px solid #ddd; border-right: 1px solid #888; padding: 0.4em 0 0.3em 0.7em; }    
+.mails th:nth-child(1), .mails td:nth-child(1) { width: 20%; }
+.mails th:nth-child(2), .mails td:nth-child(2) { width: 15%; }
+.mails th:nth-child(3), .mails td:nth-child(3) { width: 45%; }
+.mails th:nth-child(4), .mails td:nth-child(4) { width: 15%; }
+.mails th:last-child { border-right: none }
+.mails tr:nth-child(even) { background-color: #EEE; }
+  
+.viewMail .mailInfo { background-color: #dae0e8; padding: 1em 1em 0.5em 1.25em; border-radius: 1em; }
+.viewMail .mailInfo h1 { margin-top: 0.2em; font-size: 130%; }
+.viewMail .mailInfo label { color: #777; font-weight: bold; min-width: 2.75em; text-align:right; display: inline-block; }
+.viewMail .message { padding: 0 1.25em; }
+
+
+
+/* TAKING BC's STYLE */
+#bCS_billing_contentWrap .fatGreyTitles
+{
+    margin-bottom: 15px;
+}
+
+#bllg_billingSch
+{
+    margin: 0px 0px 38px 100px;
+}
+
+#bllg_billingSch a
+{
+    white-space: nowrap;
+    position: absolute;
+    left: 90px;
+    top: -2px;
+}
+
+#bllg_billingSch select
+{
+    width: 157px;
+}
+
+#sendInitialAndRecurring_wrap
+{
+    position: absolute;
+    left: 130px;
+    top: -1px;
+}
+
+#sendInitialAndRecurring_wrap div
+{
+    position: absolute;
+    left: 22px;
+    top: 2px;
+    font-weight: normal;
+    font-size: 12px;
+    color: #000;
+    white-space: nowrap;
+}
+
+#initial_wrap
+{
+    display: block;
+    width: 100%;
+    margin: 0px 0px 10px 95px;
+}
+
+#recurring_wrap
+{
+    width: 100%;
+    margin: 0px 0px 0px 95px;
+}
+
+.bM_mainTitle
+{
+    font-weight: bold;
+    margin: 0px 0px 1px 14px;
+}
+
+.bM_mainWrap
+{
+    width: 794px;
+}
+
+.bM_mainTop
+{
+    width: 100%;
+    height: 75px;
+    background-image: url(/static/img/agent/policies/policySetup/billing_pMWrapBox_top.png);
+}
+
+.bM_mainMiddle
+{
+    width: 100%;
+    background-image: url(/static/img/agent/policies/policySetup/billing_pMWrapBox_middle.png);
+    background-repeat: repeat-y;
+    padding: 15px 0px 16px 0px;
+}
+
+.bM_mainBottom
+{
+    width: 100%;
+    height: 18px;
+    background-image: url(/static/img/agent/policies/policySetup/billing_pMWrapBox_bottom.png);
+}
+
+.bM_billWhom_wrap
+{
+    position: absolute;
+    left: 48px;
+    top: 32px;
+}
+
+.bM_billWhom_wrap select
+{
+    width: 343px;
+}
+
+.bM_billHow_wrap
+{
+    position: absolute;
+    left: 403px;
+    top: 32px;
+}
+
+.bM_billHow_wrap select
+{
+    width: 343px;
+}
+
+.bM_addPaymentMethod
+{
+    margin: 0px 0px 11px 48px;
+}
+
+.bM_addPaymentMethod div
+{
+    white-space: nowrap;
+    position: absolute;
+    left: 23px;
+    top: 3px;
+}
+
+.bM_paymentMethods_wrap,
+.bM_paymentMethodPlaceholder_wrap
+{
+    margin: 0px 10px 43px 48px;
+}
+
+.bM_paymentMethod_wrap,
+.bM_paymentMethodPlaceholder_wrap
+{
+    width: 343px;
+    height: 138px;
+    background-image: url(/static/img/agent/policies/policySetup/billing_paymentMethodBox.png);
+    float: left;
+    margin: 0px 12px 12px 0px;
+}
+
+.bM_paymentMethod_wrap .edit
+{
+    position: absolute;
+    left: 10px;
+    top: 9px;
+}
+
+.bM_paymentMethod_wrap .remove
+{
+    position: absolute;
+    left: 315px;
+    top: 8px;
+}
+
+.bM_paymentMethod_wrap .cashCheckMO,
+.bM_paymentMethodPlaceholder_wrap .ccAch
+{
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 22px;
+}
+
+.bM_paymentMethod_wrap input,
+.bM_paymentMethodPlaceholder_wrap .add
+{
+    position: absolute;
+    left: 12px;
+    top: 69px;
+}
+
+.bM_paymentMethod_wrap .pM_mainName,
+.bM_paymentMethodPlaceholder_wrap .pM_mainName
+{
+    max-width: 225px;
+    height: 15px;
+    font-weight: bold;
+    margin: 12px 4px 4px 35px;
+    float: left;
+    overflow: hidden;
+}
+
+.bM_paymentMethod_wrap .pM_cardNumb
+{
+    width: 45px;
+    height: 15px;
+    margin: 12px 4px 4px 0px;
+    float: left;
+    overflow: hidden;
+}
+
+.bM_paymentMethod_wrap .pM_description
+{
+    clear: both;
+    width: 280px;
+    font-style: italic;
+    margin-left: 35px;
+    overflow: hidden;
+}
+
+.bM_paymentMethod_wrap .pM_autoText
+{
+    white-space: nowrap;
+    position: absolute;
+    left: 34px;
+    top: 69px;
+}
+
+.bM_paymentMethodPlaceholder_wrap .pM_autoText
+{
+    white-space: nowrap;
+    position: absolute;
+    left: 34px;
+    top: 72px;
+}
+
+.secondRow.add
+{
+    top: 100px !important;
+}
+
+.secondRow.pM_autoText
+{
+    top: 103px !important;
+}
+
+.bM_paymentMethod_wrap .pM_withdrawFunds
+{
+    white-space: nowrap;
+    position: absolute;
+    left: 34px;
+    top: 91px;
+}
+
+.bM_paymentMethod_wrap .pM_withdrawFunds select
+{
+    width: 160px;
+}
+
+#spacerDiv236
+{
+    width: 5px;
+    height: 55px;
+}
+
+.bM_paymentForm
+{
+    left: 625px;
+    bottom: 28px;
+    display: none;
+}
+
+
+#manualReason_wrap {
+    display: none;
+}
+
+#manualReason_wrap .littleGreyTitles {
+    position: absolute;
+    top: 55px;
+    left: 12px;
+}
+
+#manualReason_wrap input {
+    width: 310px;
+}
+
+#bCS_insureds_contentWrap
+{
+    margin-bottom: 220px;
+}
+
+.additionalInterestsTitle
+{
+    margin-top: 50px;
+}
+
+#howManyInsureds_wrap
+{
+    margin: 0px 0px 10px 103px;
+}
+
+#numberOfNamedInsureds
+{
+    width: 20px;
+}
+
+#howManyInsureds_wrap .add
+{
+    position: absolute;
+    left: -28px;
+    top: 2px;
+}
+
+#howManyAdditionalInterests_wrap
+{
+    margin: 0px 0px 10px 103px;
+}
+
+#numberOfAdditionalInterests
+{
+    width: 20px;
+}
+
+#howManyAdditionalInterests_wrap .add
+{
+    position: absolute;
+    left: -28px;
+    top: 2px;
+}
+
+.mainGreyHorizontal
+{
+    width: 824px;
+    height: 1px;
+    background-image: url(/static/img/agent/policies/policySetup/mainGreyHorizontal.png);
+    margin: 0px 0px 50px 70px;
+}
+
+/* Named Insureds */
+#namedInsureds_wrap,
+#additionalInterests_wrap
+{
+    width: 879px;
+    padding-left: 105px;
+}
+
+#agentcy_wrapper
+{
+    width: 879px;
+    padding-left: 76px;
+}
+
+#creator_display
+{
+    margin-left: 10px;
+}
+
+.namedInsured_wrap,
+.additionalInterest_wrap
+{
+    width: 377px;
+    margin-bottom: 0px;
+    float: left;
+}
+
+.namedInsured_wrap .smallRemove,
+.additionalInterest_wrap .smallRemove
+{
+    background-image: url(/static/img/global/icon_remove.png);
+    display: block;
+    height: 19px;
+    width: 17px;
+    position: absolute;
+    left: -30px;
+    top: -36px;
+}
+
+.nI_verticalDivider
+{
+    width: 1px;
+    height: 115px;
+    background-image: url(/static/img/agent/policies/policySetup/insureds_sideLine.png);
+    float: left;
+    margin: -20px 65px 0px 0px;
+}
+
+.nI_horizontalDivider
+{
+    width: 824px;
+    height: 1px;
+    background-image: url(/static/img/agent/policies/policySetup/mainGreyHorizontal.png);
+    margin: 0px 0px 50px -27px;
+}
+
+.nI_title1
+{
+    font-weight: bold;
+    font-size: 13px;
+    margin: 0px 0px 20px 0px;
+}
+
+.nI_title2
+{
+    font-weight: bold;
+    font-size: 13px;
+    margin: 0px 0px 20px 0px;
+}
+
+.namedInsured_wrap .edit,
+.additionalInterest_wrap .edit
+{
+    position: absolute;
+    left: 319px;
+    top: 50px;
+
+}
+
+.namedInsured_wrap .contactName,
+.additionalInterest_wrap .contactName
+{
+    margin-left: 0px;
+}
+
+.namedInsured_wrap .contactInputAndInfoDisplay,
+.additionalInterest_wrap .contactInputAndInfoDisplay
+{
+    margin-bottom: 10px;
+    width: 312px;
+}
+
+.namedInsured_wrap .contactInputAndInfoDisplay input,
+.additionalInterest_wrap .contactInputAndInfoDisplay input
+{
+    width: 300px;
+    margin-bottom: 12px;
+}
+
+.namedInsured_wrap .contactLink,
+.additionalInterest_wrap .contactLink
+{
+    position: absolute;
+    left: 318px;
+    top: 11px;
+}
+
+.namedInsured_wrap .contactInfoDisplay
+{
+    display: block;
+    margin-left: 2px;
+}
+
+.additionalInterest_wrap .interestDiv input
+{
+    margin-bottom: 0px;
+}
+
+.additionalInterest_wrap .contactInfoDisplay
+{
+    display: block;
+    margin-left: 2px;
+    margin-top: 15px;
+}
+
+.nI_addressWrap
+{
+    margin-bottom: 15px;
+}
+
+.nI_addressWrap input
+{
+    width: 215px;
+}
+
+.nI_addressLine1
+{
+    margin-bottom: 3px;
+}
+
+.nI_addressTypeWrap
+{
+    position: absolute;
+    left: 242px;
+    top: 0px;
+}
+
+.nI_addressTypeWrap select
+{
+    width: 88px;
+}
+
+.nI_cityWrap
+{
+    margin-bottom: 15px;
+}
+
+.nI_cityInput
+{
+    width: 138px;
+}
+
+.nI_stateWrap
+{
+    position: absolute;
+    left: 165px;
+    top: 0px;
+}
+
+.nI_stateWrap select
+{
+    width: 60px;
+}
+
+.nI_zipWrap
+{
+    position: absolute;
+    left: 242px;
+    top: 0px;
+}
+
+.nI_zipWrap input
+{
+    width: 78px;
+}
+
+.nI_phoneWrap
+{
+    margin-bottom: 15px;
+}
+
+.nI_phoneWrap input
+{
+    width: 215px;
+}
+
+.nI_phoneTypeWrap
+{
+    position: absolute;
+    left: 242px;
+    top: 0px;
+}
+
+.nI_phoneTypeWrap select
+{
+    width: 88px;
+}
+
+.nI_emailWrap
+{
+    margin-bottom: 20px;
+}
+
+.nI_emailWrap input
+{
+    width: 215px;
+}
+
+.nI_emailTypeWrap
+{
+    position: absolute;
+    left: 242px;
+    top: 0px;
+}
+
+.nI_emailTypeWrap select
+{
+    width: 88px;
+}
+
+.nI_radioBtnsWrap
+{
+    margin-bottom: 20px;
+}
+
+.nI_radioBtnWrap
+{
+    margin-bottom: 9px;
+}
+
+.nI_radioBtnWrap div
+{
+    position: absolute;
+    left: 22px;
+    top: 0px;
+    white-space: nowrap;
+}
+
+.nI_permissionQuestion input
+{
+    left: 5px;
+}
+
+.nI_permissionQuestion label
+{
+    padding-left: 8px;
+}
+
+.nI_socialSecurityWrap
+{
+    margin-bottom: 15px;
+}
+
+.nI_socialSecurityInput
+{
+    width: 138px;
+}
+
+.nI_dOBWrap
+{
+    position: absolute;
+    left: 165px;
+    top: 0px;
+}
+
+.smallDate
+{
+    font-size: 9px;
+}
+
+.nI_dOBInputsWrap
+{
+    width: 150px;
+    height: 20px;
+}
+
+.nI_dOBInputsWrap input
+{
+    float: left;
+    width: 22px;
+    margin-right: 2px;
+}
+
+.nI_dOBInputsWrap .year
+{
+    width: 48px;
+}
+
+.nI_creditWrap
+{
+    margin-bottom: 15px;
+}
+
+.nI_creditInput
+{
+    width: 138px;
+}
+
+.nI_creditWrap span
+{
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.nI_creditWrap .nI_getCreditBtn
+{
+    display: inline-block;
+    width: 121px;
+    height: 19px;
+    background-image: url(/static/img/agent/policies/policySetup/btn_getCreditScore.png);
+    position: absolute;
+    left: 150px;
+}
+
+.nI_creditWrap .nI_getCreditBtn:hover
+{
+    background-position: 0px -19px;
+}
+
+
+.additionalInterest_interestWrap
+{
+    margin-bottom: 50px;
+}
+
+.additionalInterest_interestWrap input
+{
+    width: 300px;
+}
+
+#bCBottom_insuredsPage .bC_save_btn
+{
+    left: 411px;
+}
+
+#bCBottom_insuredsPage .bC_next_btn
+{
+    left: 491px;
+}
+
+.bottomSpacer24
+{
+    width: 5px;
+    height: 20px;
+}
+
+/* Policy Section */
+#policyTermContentWrap
+{
+    margin: 0px 0px 25px 105px;
+}
+
+#policyTermLabel
+{
+    margin-left: -105px;
+}
+
+
+#plcy_effDate_wrap,
+#plcy_expDate_wrap,
+#underwritingContacted_wrap,
+#underwritingContactDate_wrap
+{
+    float: left;
+    margin-right: 15px;
+}
+
+#underwritingContacted_wrap {
+    margin-bottom: 20px;
+}
+
+#plcy_effDate_wrap .monthAndDay,
+#plcy_expDate_wrap .monthAndDay,
+#underwritingContactDate_wrap .monthAndDay
+{
+    width: 22px;
+    float: left;
+    margin-right: 2px;
+}
+
+#plcy_effDate_wrap .year,
+#plcy_expDate_wrap .year,
+#underwritingContactDate_wrap .year
+{
+    width: 44px;
+    float: left;
+    margin-right: 2px;
+}
+
+#plcy_term_wrap,
+#underwritingApprover_wrap
+{
+    float: left;
+}
+
+#plcy_term_wrap select
+{
+    width: 100px;
+    margin-right: 8px;
+}
+
+#plcy_atRenewal_wrap
+{
+    display: none;
+    float: left;
+}
+
+#plcy_atRenewal_wrap select
+{
+    width: 155px;
+    margin-right: 8px;
+}
+
+#underwritingContacted_wrap select
+{
+    width: 170px;
+    margin-top: 3px;
+}
+
+#underwritingApprover
+{
+    width: 200px;
+}
+
+.littleVertical
+{
+    width: 1px;
+    height: 49px;
+    background-image: url(/static/img/agent/policies/policySetup/littleVertical.png);
+    float: left;
+    margin-right: 25px;
+}
+
+#littleVertical2
+{
+    margin-left: 15px;
+}
+
+#policyTypeStateSelect
+{
+    margin: 0px 0px 35px 100px;
+}
+
+#policyTypeStateSelect select
+{
+    width: 156px;
+}
+
+#lines_wrap
+{
+    display: none;
+    margin: -10px 0px 35px 125px;
+}
+
+.line_wrap
+{
+    margin: 0px 0px 15px 0px;
+}
+
+.line_wrap .accordionTableArrow
+{
+    position: absolute;
+    left: -24px;
+    top: -1px;
+}
+
+.line_title
+{
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.line_accordion
+{
+    display: none;
+    width: 100%;
+    margin: 0px 0px 15px 0px;
+}
+
+.pT_wrap
+{
+    width: 100%;
+    margin: 5px 0px 15px 0px;
+}
+
+.pT_wrap input
+{
+    margin-bottom: 12px;
+}
+
+.pT_title
+{
+    width: 500px;
+    white-space: nowrap;
+    position: absolute;
+    left: 23px;
+    top: 0px;
+}
+
+.pT_detailsWrap
+{
+    margin: 0px 0px 15px 23px;
+}
+
+.pT_descriptionWrap
+{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.d_title
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.d_description
+{
+    width: 650px;
+    min-height: 12px;
+    margin-left: 67px;
+}
+
+.pT_guidelinesWrap
+{
+    width: 100%;
+    margin-bottom: 7px;
+}
+
+.g_title
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.g_description
+{
+    width: 650px;
+    min-height: 12px;
+    margin-left: 67px;
+}
+
+.littleBlackText
+{
+    color: #7C7C7C;
+}
+
+/* Underwriting Questions */
+#underwritingQuestions_wrap,
+#underwritingContact_wrap,
+#underwritingMessage
+{
+    margin: 0px 0px 60px 105px;
+}
+
+#customUnderwritingMessage
+{
+    margin-bottom: 30px;
+}
+
+.uQ_number
+{
+    font-weight: bold;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.uQ_wrap
+{
+    margin-bottom: 15px;
+}
+
+.uQ_question
+{
+    width: 615px;
+    margin: 0px 0px 0px 18px;
+    white-spac: nowrap;
+}
+
+.uQ_wrap textarea
+{
+    width: 735px;
+    height: 50px;
+    margin: 3px 0px 0px 18px;
+}
+
+.uQ_yesNo_wrap
+{
+    position: absolute;
+    left: 660px;
+    top: -1px;
+}
+
+.yesText
+{
+    position: absolute;
+    left: 19px;
+    top: 0px;
+}
+
+.noRadio
+{
+    position: absolute;
+    left: 52px;
+    top: 0px;
+}
+
+.noText
+{
+    position: absolute;
+    left: 72px;
+    top: 0px;
+}
+
+#changeDate_wrap
+{
+    display: none;
+}
+
+#changeDate
+{
+    color: black;
+}
+
+#toggleSuppQuestions_wrap
+{
+    margin-top: -28px;
+}
+
+#rateAndSave_wrapper_bottom .printDecBtn_wrap
+{
+    width: 51px;
+    height: 24px;
+    background-image: url(/static/img/agent/policies/policySetup/printDec_arrow.png);
+    position: absolute;
+    left: 219px;
+    top: 62px;
+}
+
+#rateAndSave_wrapper_bottom_fees .printDecBtn_wrap
+{
+    width: 51px;
+    height: 40px;
+    background-image: url(/static/img/agent/policies/policySetup/printDec_arrow2.png);
+    position: absolute;
+    left: 219px;
+    top: 122px;
+}
+
+.printDecBtn_wrap a
+{
+    display: block;
+    width: 139px;
+    height: 19px;
+    background-image: url(/static/img/agent/policies/policySetup/btn_printDec.png);
+    position: absolute;
+    left: -44px;
+    top: 48px;
+}
+
+.printDecBtn_wrap a:hover
+{
+    background-image: url(/static/img/agent/policies/policySetup/btn_printDec_alt.png);
+}
+
+#rsk_addAnotherWrap
+{
+    margin: 0px 0px 13px 115px;
+}
+
+#rsk_addAnotherWrap div
+{
+    white-space: nowrap;
+    position: absolute;
+    left: 23px;
+    top: 3px;
+}
+
+#rsk_addAnotherWrap select
+{
+    width: 80px;
+    position: absolute;
+    left: 60px;
+    top: 1px;
+}
+
+#rskTable_wrap
+{
+    width: 784px;
+    margin: 0px 0px 60px 100px;
+}
+
+#rskTable_top
+{
+    width: 100%;
+    height: 31px;
+    background-image: url(/static/img/tables/a_polRis_risks.png);
+}
+
+#rskTable_top .tT_1
+{
+    width: 703px;
+    left: 64px;
+}
+
+#rskTable_bottom
+{
+    width: 100%;
+    height: 9px;
+    background-image: url(/static/img/tables/a_polRis_risks.png);
+    background-position: 0px -84px;
+}
+
+#rsk_locationsWrap
+{
+    width: 100%;
+}
+
+.rsk_locationWrap
+{
+    width: 100%;
+}
+
+.rL_row
+{
+    width: 100%;
+    height: 31px;
+    background-image: url(/static/img/agent/policies/policySetup/risksTable_row.png);
+}
+
+.rL_row .remove
+{
+    position: absolute;
+    left: 38px;
+    top: 7px;
+}
+
+.containerElm
+{
+    display: block;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    left: 20px;
+    top: 13px;
+}
+
+.containerElm .rL_accordionArrow
+{
+    display: block;
+    width: 17px;
+    height: 16px;
+    position: absolute;
+    left: -4px;
+    top: -5px;
+}
+
+.containerElm .rL_houseIcon
+{
+    display: block;
+    width: 25px;
+    height: 18px;
+    background-image: url(/static/img/global/icon_house.png);
+    position: absolute;
+    left: 53px;
+    top: -6px;
+}
+
+.rL_addressTitle
+{
+    width: 652px;
+    height: 16px;
+    position: absolute;
+    left: 105px;
+    top: 9px;
+    cursor: default;
+    overflow: hidden;
+}
+
+.rL_accordionRow
+{
+    display: block;
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+    background-image: url(/static/img/agent/policies/policySetup/risksTable_accordionBg.png);
+    background-repeat: repeat-y;
+}
+
+.rL_fadedLineDiv
+{
+    width: 1px;
+    height: 29px;
+    background-image: url(/static/img/agent/policies/policySetup/risksTable_accordionFadedLine.png);
+    margin: 0px 0px 20px 64px;
+}
+
+.rL_accordionRow .fatGreyTitles
+{
+    margin: 0px 0px 15px 50px;
+}
+
+.rL_addressWrap
+{
+    width: 100%;
+    margin-left: 77px;
+    margin-bottom: 35px;
+}
+
+.copyAddress
+{
+    white-space: nowrap;
+    position: absolute;
+    left: 108px;
+    top: -2px;
+    z-index: 1;
+}
+
+.rL_addressInput1
+{
+    width: 220px;
+    margin-bottom: 3px;
+}
+
+.rL_addressInput2
+{
+    width: 220px;
+}
+
+.rL_zipWrap,
+.rL_cityWrap,
+.rL_specifyWrap,
+.rL_streetAddressWrap,
+.rL_countySelectWrapper,
+.rL_stateWrap,
+.rL_accuracyWrap,
+.manualProtectionClassWrapper,
+.fireDistrictDistanceWrapper,
+.ISOFireDistrictWrapper,
+.ISOProtectionClassDisplayWrapper
+{
+    float: left;
+    margin-right: 15px;
+}
+
+.rL_accuracyWrap i
+{
+    margin-top: 12px;
+}
+
+.rL_zipWrap input
+{
+    width: 80px;
+}
+
+.rL_cityWrap select
+{
+    width: 140px;
+}
+
+.rL_stateText,
+.pcStatic
+{
+    width: 35px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.rL_countyWrap {
+    margin: 0px 0px 9px 77px;
+}
+
+.rL_countyWrap select
+{
+    width: 201px;
+}
+
+.prop_ifPC_wrap
+{
+    display: none;
+    margin: 0px 0px 9px 77px;
+    margin-bottom: 40px;
+}
+
+.prop_ifPC_wrap select
+{
+    width: 201px;
+}
+
+.hydrantDistanceWrapper
+{
+    margin-bottom: 9px;
+}
+
+.getProtectionClassWrapper
+{
+    float: left;
+    padding-top: 15px;
+}
+
+.fireDistrictDistanceInput {
+    width: 200px;
+}
+
+.hydrantDistanceInput {
+    width: 160px;
+}
+
+.rL_latitudeWrap
+{
+    width: 100%;
+    margin: 0px 0px 35px 77px;
+}
+
+.rL_latitude
+{
+    width: 130px;
+}
+
+.rL_longitudeWrap
+{
+    position: absolute;
+    left: 157px;
+    top: 0px;
+}
+
+.rL_longitudeWrap input
+{
+    width: 130px;
+}
+
+.rL_getBtn
+{
+    display: block;
+    width: 71px;
+    height: 19px;
+    background-image: url(/static/img/global/btn_get.png);
+    position: absolute;
+    left: 315px;
+    top: 15px;
+}
+
+.rL_getBtn:hover
+{
+    background-image: url(/static/img/global/btn_get_alt.png);
+}
+
+.rL_addARiskPhoto
+{
+    position: absolute;
+    left: 69px;
+    top: 0px;
+}
+
+.rL_addARiskPhoto .littleGreyTitles
+{
+    font-weight: normal;
+    position: absolute;
+    left: 23px;
+    top: 4px;
+    white-space: nowrap;
+}
+
+.rM_addRMPdf
+{
+    position: absolute;
+    left: 90px;
+    top: 0px;
+}
+
+.rM_addRMPdf .littleGreyTitles
+{
+    font-weight: normal;
+    position: absolute;
+    left: 23px;
+    top: 4px;
+    white-space: nowrap;
+}
+
+.btn_getCurrentLossHistory, .btn_addInsuredDisclosure
+{
+    z-index: 1;
+}
+
+/* Mortgagee Section */
+.rL_addAMortgageeWrap
+{
+    position: absolute;
+    left: 113px;
+    top: 0px;
+}
+
+.rL_addAMortgageeWrap .littleGreyTitles
+{
+    font-weight: normal;
+    position: absolute;
+    left: 23px;
+    top: 4px;
+    white-space: nowrap;
+}
+
+.rL_mortgageesWrap
+{
+    margin: 20px 0px 35px 77px;
+}
+
+.rL_mortgageeWrap
+{
+    width: 700px;
+    min-height: 155px;
+}
+
+.rL_mortgageeWrap .smallRemove
+{
+    top: 19px;
+    left: -22px;
+}
+
+.rL_mortgageeWrap .contactName
+{
+    margin-left: 0px;
+}
+
+.rL_mortgageeWrap .contactEntry
+{
+    width: 230px;
+}
+
+.rL_mortgageeWrap .innerSpan
+{
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.rL_mortgageeWrap .contactInputAndInfoDisplays_wrapper .descriptionDiv
+{
+    position: absolute;
+    left: 257px;
+    top: 0px;
+}
+
+.rL_mortgageeWrap .contactInputAndInfoDisplays_wrapper .descriptionDiv input
+{
+    width: 359px;
+}
+
+.rL_mortgageeWrap .contactInputAndInfoDisplays_wrapper .mortgageeStatementDiv
+{
+    position: absolute;
+    left: 257px;
+    top: 96px;
+}
+
+.rL_mortgageeWrap .contactInputAndInfoDisplays_wrapper .mortgageeStatementDiv input
+{
+    width: 359px;
+}
+
+.rL_mortgageeWrap .contactInputAndInfoDisplays_wrapper .loanNumberDiv
+{
+    position: absolute;
+    left: 257px;
+    top: 48px;
+}
+
+.rL_mortgageeWrap .contactInputAndInfoDisplays_wrapper .loanNumberDiv input
+{
+    width: 130px;
+}
+
+.rL_mortgageeWrap .contactInputAndInfoDisplays_wrapper .typeDiv
+{
+    position: absolute;
+    left: 412px;
+    top: 48px;
+}
+
+.rL_mortgageeWrap .contactInputAndInfoDisplays_wrapper .typeDiv select
+{
+    width: 140px;
+}
+
+.rL_mortgageeWrap .contactInfoDisplay
+{
+    width: 240px;
+    margin-left: 0px;
+}
+
+.rL_mortgageeWrap .spacerDiv1
+{
+    height: 0px;
+}
+
+/* Photos Section */
+.photos_wrapper
+{
+    margin: 20px 0px 20px 77px;
+}
+
+.photo_wrapper
+{
+    margin-right: 36px;
+}
+
+/* RiskMeter Section */
+.riskMeterArea_wrap
+{
+    display: none;
+}
+
+.btn_goToRiskMeter
+{
+    display: block;
+    width: 111px;
+    height: 19px;
+    background-image: url(/static/img/britecore/policies/property/btn_goToRiskMeter.png);
+    position: absolute;
+    left: 568px;
+    top: 3px;
+}
+
+.btn_goToRiskMeter:hover
+{
+    background-image: url(/static/img/britecore/policies/property/btn_goToRiskMeter.png);
+    background-position: 0px -19px;
+}
+
+.riskMeterPdfs_wrap
+{
+    margin: 20px 0px 37px 77px;
+}
+
+.rMPdf_wrap
+{
+    margin-bottom: 12px;
+}
+
+.rMPdf_name
+{
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 11px;
+    white-space: nowrap;
+    position: absolute;
+    left: 23px;
+    top: -1px;
+    color: #000;
+}
+
+/* Loss History Area */
+.lossHArea
+{
+    margin: 25px 0px 40px 0px;
+}
+
+.lossH_topArea
+{
+    width: 650px;
+    margin: 0px 0px 10px 77px;
+}
+
+.lossHistory_status
+{
+    width: 453px;
+    height: 46px;
+    background-image: url(/static/img/agent/policies/policySetup/lossH_topGreyBox.png);
+    margin: 20px 0px 30px 77px;
+    display: none;
+}
+
+.lossHistory_status .lHAccordion_row
+{
+    position: absolute;
+    left: 19px;
+    top: 16px;
+}
+
+.lossHistory_status .lHAccordion_row .lHA_rowContent
+{
+    width: 265px;
+    height: 15px;
+    position: absolute;
+    top: 0px;
+    left: 155px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.lossHistory_header
+{
+    width: 453px;
+    height: 46px;
+    background-image: url(/static/img/agent/policies/policySetup/lossH_topGreyLineBox.png);
+    float: left;
+    margin-right: 26px;
+}
+
+.btn_getCurrentLossHistory
+{
+    display: block;
+    width: 152px;
+    height: 19px;
+    background-image: url(/static/img/britecore/policies/property/btn_getCurrentLossHistory.png);
+    float: left;
+    margin-bottom: 8px;
+}
+
+.btn_getCurrentLossHistory:hover
+{
+    background-image: url(/static/img/britecore/policies/property/btn_getCurrentLossHistory_alt.png);
+}
+
+.btn_addInsuredDisclosure
+{
+    display: block;
+    width: 152px;
+    height: 19px;
+    background-image: url(/static/img/britecore/policies/property/btn_addInsuredDisclosure.png);
+    float: left;
+    margin-bottom: 10px;
+}
+
+.btn_addInsuredDisclosure:hover
+{
+    background-image: url(/static/img/britecore/policies/property/btn_addInsuredDisclosure_alt.png);
+}
+
+.lossHistoryWrapper
+{
+    margin: 0px 0px 4px 77px;
+}
+
+.insuredDisclosureWrapper
+{
+    margin: 0px 0px 0px 77px;
+}
+
+.lossHistory_header .lHAccordion_row
+{
+    position: absolute;
+    left: 19px;
+    top: 16px;
+}
+
+.lossHistory_header .lHARow2
+{
+    position: absolute;
+    left: 246px;
+    top: 16px;
+}
+
+.lossHistory_header .lHAccordion_row .lHA_rowContent
+{
+    width: 97px;
+    height: 15px;
+    position: absolute;
+    left: 90px;
+    top: 0px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.lHAccordion_rows .lHAccordion_row
+{
+    margin: 0px 0px 12px 76px;
+}
+
+.lHAccordion_rows .lHAccordion_row:nth-of-type(12)
+{
+    margin-bottom: 35px;
+}
+
+.lHAccordion_rows .lHAccordion_row .lHA_rowContent
+{
+    width: 400px;
+    height: 14px;
+    overflow: hidden;
+    position: absolute;
+    left: 120px;
+    top: 0px;
+    font-weight: bold;
+}
+
+.lossHTable_wrapper
+{
+    width: 630px;
+    margin: 0px 0px 0px 0px;
+    border-bottom: 1px solid #C7C7C7;
+}
+
+.lossHTable_top
+{
+    width: 100%;
+    height: 20px;
+    background-image: url(/static/img/tables/a_polRis_lossHistory.png);
+}
+
+.lossHTable_top .tT_1
+{
+    width: 91px;
+    left: 59px;
+}
+
+.lossHTable_top .tT_2
+{
+    width: 131px;
+    left: 152px;
+}
+
+.lossHTable_top .tT_3
+{
+    width: 136px;
+    left: 285px;
+}
+
+.lossHTable_top .tT_4
+{
+    width: 204px;
+    left: 424px;
+}
+
+.lossHTable_bottom
+{
+    display: none;
+}
+
+.lossHTable_rows
+{
+    width: 100%;
+}
+
+.lossHTable_row
+{
+    width: 100%;
+}
+
+.lossHTable_visibleRow
+{
+    width: 100%;
+    height: 31px;
+    background-image: url(/static/img/tables/a_polRis_lossHistory.png);
+    background-position: 0px -20px;
+}
+
+.lossHTable_visibleRow .accordionTableArrow
+{
+    position: absolute;
+    left: 10px;
+    top: 8px;
+}
+
+.lossHTable_visibleRow .remove
+{
+    position: absolute;
+    left: 32px;
+    top: 7px;
+}
+
+.lossHTable_lossDate
+{
+    width: 75px;
+    height: 15px;
+    position: absolute;
+    left: 72px;
+    top: 9px;
+    overflow: hidden;
+}
+
+.lossHTable_lossCause
+{
+    width: 112px;
+    height: 15px;
+    position: absolute;
+    left: 162px;
+    top: 9px;
+    overflow: hidden;
+}
+
+.lossHTable_dollarSign
+{
+    position: absolute;
+    left: 296px;
+    top: 10px;
+}
+
+.lossHTable_lossAmount
+{
+    width: 95px;
+    height: 15px;
+    position: absolute;
+    left: 318px;
+    top: 9px;
+    overflow: hidden;
+    text-align: right;
+}
+
+.lossHTable_insured1
+{
+    width: 185px;
+    height: 15px;
+    position: absolute;
+    left: 436px;
+    top: 9px;
+    overflow: hidden;
+}
+
+.lossHTable_accordionRow
+{
+    display: block;
+    width: 100%;
+    background-image: url(/static/img/tables/a_polRis_lossHistory_bgRepeater.png);
+    background-repeat: repeat-y;
+}
+
+.lHAccordion_topLine
+{
+    width: 100%;
+    height: 20px;
+    background-image: url(/static/img/tables/a_polRis_lossHistory.png);
+    background-position: 0px -51px;
+    margin-bottom: 20px;
+}
+
+/* Insured Disclosure */
+.insuredDisclosureTable_wrapper
+{
+    width: 630px;
+    margin: 0px 0px 0px 0px;
+}
+
+.insuredDisclosureTable_top
+{
+    width: 100%;
+    height: 21px;
+    background-image: url(/static/img/tables/a_polRis_lossHistory.png);
+}
+
+.insuredDisclosureTable_top .tT_1
+{
+    width: 90px;
+    left: 61px;
+}
+
+.insuredDisclosureTable_top .tT_2
+{
+    width: 136px;
+    left: 152px;
+}
+
+.insuredDisclosureTable_top .tT_3
+{
+    width: 136px;
+    left: 289px;
+}
+
+.insuredDisclosureTable_top .tT_4
+{
+    width: 286px;
+    left: 423px;
+}
+
+.insuredDisclosureTable_bottom
+{
+    display: none;
+}
+
+.insuredDisclosureTable_rows
+{
+    width: 100%;
+}
+
+.insuredDisclosureTable_row
+{
+    width: 100%;
+    height: 31px;
+    background-image: url(/static/img/tables/a_polRis_lossHistory.png);
+    background-position: 0px -21px;
+}
+
+.insuredDisclosureTable_row .edit
+{
+    position: absolute;
+    left: 9px;
+    top: 9px;
+}
+
+.insuredDisclosureTable_row .remove
+{
+    position: absolute;
+    left: 35px;
+    top: 9px;
+}
+
+.lossHistoryGreyTitles
+{
+    margin: 0px 0px 5px 0px;
+    padding-top: 7px;
+    color: #000;
+}
+
+.iDTable_lossDate
+{
+    width: 90px;
+    height: 14px;
+    position: absolute;
+    left: 75px;
+    top: 8px;
+}
+
+.iDTable_lossCause
+{
+    width: 123px;
+    height: 14px;
+    position: absolute;
+    left: 162px;
+    top: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.iDTable_dollarSign
+{
+    position: absolute;
+    left: 298px;
+    top: 8px;
+}
+
+.iDTable_lossAmount
+{
+    width: 105px;
+    height: 14px;
+    position: absolute;
+    left: 308px;
+    top: 8px;
+    overflow: hidden;
+    text-align: right;
+}
+
+.iDTable_description
+{
+    width: 266px;
+    height: 14px;
+    position: absolute;
+    left: 432px;
+    top: 6px;
+    line-height: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.spacerDiv33
+{
+    width: 5px;
+    height: 18px;
+}
+
+.approvalRequired {
+    color: red;
+    font-style: italic;
+    font-size: 17px;
+    margin-bottom: 8px;
+    display: none;
+}
+
+.approvalRequired .fa-info-circle {
+    cursor: help;
+}
+
+.fatGreyTitles
+{
+    margin-bottom: 30px;
+}
+
+#submit_greyBox
+{
+    width: 774px;
+    height: 131px;
+    background-image: url(/static/img/agent/policies/policySetup/submit_greyLineBox3.png);
+    margin: 0px 0px 50px 105px;
+}
+
+#breakdownRows
+{
+    padding-top: 7px;
+    margin: 0px 0px 12px 30px;
+}
+
+.breakdownRow
+{
+    margin-bottom: 9px;
+}
+
+.breakdownRow a
+{
+    font-size: 12px;
+}
+
+.lastRowOverpayment
+{
+    margin-bottom: 17px;
+}
+
+.lastRow
+{
+    margin-bottom: 27px;
+}
+
+.breakdownRow span
+{
+    position: absolute;
+    left: 210px;
+    top: 0px;
+    font-weight: normal;
+}
+
+.breakdownRow div
+{
+    width: 85px;
+    text-align: right;
+    position: absolute;
+    left: 236px;
+    top: 0px;
+}
+
+.bRBold
+{
+    font-weight: bold;
+}
+
+#secondBox, #changeBreakdownRows
+{
+    width: 370px;
+    height: 130px;
+    position: absolute;
+    left: 400px;
+    top: 0px;
+    padding: 14px 0px 0px 30px;
+}
+
+.uponSubmissionRow
+{
+    width: 315px;
+    margin: 3px 0px 16px 0px;
+}
+
+.breakdownRow2
+{
+    margin-bottom: 0px;
+}
+
+.uponSubmissionRow span
+{
+    font-weight: bold;
+}
+
+#submit_payor
+{
+    font-weight: bold;
+}
+
+#submit_description
+{
+    font-style: italic;
+}
+
+#emailReceiptTo_wrap,
+#emailConfirmationTo_wrap
+{
+    margin: -5px 0px 40px 105px;
+}
+
+#emailReceiptTo_wrap input,
+#emailConfirmationTo_wrap input
+{
+    width: 240px;
+}
+
+#emailReceiptTo_wrap span.littleGreyTitles,
+#emailConfirmationTo_wrap span.littleGreyTitles
+{
+    width: 40px;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+#emailReceiptTo_wrap span.littleBlackText,
+#emailConfirmationTo_wrap span.littleBlackText
+{
+    margin-left: 50px;
+}
+
+#emailReceiptTo_wrap span.label,
+#emailConfirmationTo_wrap span.label
+{
+    width: auto;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+#emailReceiptTo_wrap div,
+#emailConfirmationTo_wrap div
+{
+    margin-bottom: 5px;
+}
+
+#submitBound_wrap
+{
+    margin: 0px 0px 50px 105px;
+}
+
+#submitBound_wrap div
+{
+    position: absolute;
+    left: 23px;
+    top: 0px;
+    white-space: nowrap;
+}
+
+.fGTBottom
+{
+    margin-top: 50px;
+    margin-bottom: 75px;
+}
+
+#submitArrow
+{
+    width: 274px;
+    height: 5px;
+    background-image: url(/static/img/agent/policies/policySetup/submit_arrow.png);
+    position: absolute;
+    left: 291px;
+    top: 7px;
+}
+
+#submitBtns_wrap
+{
+    width: 243px;
+    height: 19px;
+    position: absolute;
+    left: 582px;
+    top: -1px;
+}
+
+#btn_printApplication
+{
+    display: block;
+    width: 120px;
+    height: 19px;
+    background-image: url(/static/img/agent/policies/policySetup/btnCombo_printSubmit.png);
+    float: left;
+}
+
+#btn_printApplication:hover
+{
+    background-position: 0px -19px;
+}
+
+#btn_submitApplication
+{
+    width: 123px;
+    height: 19px;
+    background-image: url(/static/img/agent/policies/policySetup/btnCombo_printSubmit.png);
+    background-position: -120px 0px;
+    float: left;
+}
+
+#btn_submitApplication:hover
+{
+    background-position: -120px -19px;
+}
+
+#bCBottom_submitPage .bC_back_btn
+{
+    left: 411px;
+}
+
+#bCBottom_submitPage .bC_save_btn
+{
+    left: 493px;
+}
+
+
+#submissionCheckList, #submissionCheckList li
+{
+    list-style-type: square;
+}
+
+#btn_submitChange
+{
+    display: none
+}
+
+#insuredDisclosure_popUpWrapper
+{
+    display: none;
+}
+
+#insuredDisclosure_popUpWrapper .popUp_title
+{
+    width: 243px;
+    background-image: url(/static/img/popUps/headers_agent.png);
+    background-position: -173px 0px;
+}
+
+#insuredDisclosure_today
+{
+    position: absolute;
+    left: 244px;
+    top: 31px;
+}
+
+#insuredDisclosure_today span
+{
+    position: absolute;
+    left: 21px;
+    top: 2px;
+}
+
+#insuredDisclosureWrapper
+{
+    width: 100%;
+    padding-top: 10px;
+    margin: 0px 0px 35px 92px;
+}
+
+#iD_lossDateWrap
+{
+    margin: 3px 0px 15px 0px;
+}
+
+#iD_descriptionWrap
+{
+    margin: 0px 0px 20px 0px;
+}
+
+#iD_lossAmount
+{
+    margin: 0px 0px 15px 0px;
+}
+
+#iD_lossCause
+{
+    margin: 0px 0px 15px 0px
+}
+
+#iD_descriptionWrap textarea
+{
+    width: 198px;
+    height: 120px;
+}
+
+.iD_monthAndDay
+{
+    width: 22px;
+    float: left;
+    margin-right: 2px;
+}
+
+.iD_year
+{
+    width: 44px;
+    float: left;
+}
+
+ .title
+ {
+     color: #7D7B7B;
+     vertical-align: middle;
+     text-align: center;
+     line-height: 66px;
+     height: 66px;
+     min-height: 66px;
+     width: 80%;
+     margin-left: 10%;
+     margin-top: 6%;
+     float: left;
+     font-size: 22px;
+     text-shadow: 0px 1px 4px #ffffff;
+     font-family: 'Cinzel', serif;
+     letter-spacing: 2.5pt;
+ }
+
+ .title span
+ {
+     font-size: 24px;
+ }
+
+#overpayment_popUpWrapper
+{
+    display: none;
+}
+
+#overpaymentInput_wrapper
+{
+    margin: 0px 0px 30px 130px;
+}
+
+#overpaymentInput_wrapper input
+{
+    width: 110px;
+}
+
+#overpaymentInput_wrapper .inputDollarSign
+{
+    margin-top: 13px;
+}
+
+#overpaymentNote_wrapper
+{
+    margin: 0px 0px 20px 0px;
+    text-align: center;
+}
+
+#site_wrapper
+{
+    min-height: 1300px;
+}
+
+#topTabs_wrapper
+{
+    margin-bottom: 25px;
+}
+
+#bCS_insureds_contentWrap
+{
+    display: none;
+    width: 100%;
+}
+
+#bCS_policy_contentWrap
+{
+    display: none;
+    width: 100%;
+}
+
+#bCS_risks_contentWrap
+{
+    display: none;
+    width: 100%;
+}
+
+#bCS_rating_contentWrap
+{
+    display: none;
+    width: 100%;
+}
+
+#bCS_billing_contentWrap
+{
+    display: none;
+    width: 100%;
+}
+
+#bCS_submit_contentWrap
+{
+    display: none;
+    width: 100%;
+}
+
+.breadCrumbStripe_wrap
+{
+    width: 934px;
+    height: 25px;
+    background-color: #F0EDE2;
+    margin-bottom: 55px;
+    padding-left: 50px;
+}
+
+.bCS_section
+{
+    width: 115px;
+    height: 19px;
+    background-image: url(/static/img/global/breadcrumbBox_gold.png);
+    float: left;
+    margin: 3px 0px 0px -8px;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.bCS_section_alt
+{
+    width: 115px;
+    height: 19px;
+    background-image: url(/static/img/global/breadcrumbBox_white.png);
+    float: left;
+    margin: 3px 0px 0px -8px;
+    cursor: default;
+}
+
+.bCS_section div
+{
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    margin-top: 2px;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.bCS_section_alt div
+{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 11px;
+    margin-top: 2px;
+    cursor: default;
+}
+
+.breadCrumb_bottomStripe
+{
+    width: 100%;
+    height: 26px;
+    background-color: #F0EDE2;
+    margin-top: 0px;
+    margin-bottom: 120px;
+}
+
+.bC_back_btn
+{
+    display: block;
+    width: 82px;
+    height: 19px;
+    background-image: url(/static/img/global/breadcrumbBtns_back.png);
+    position: absolute;
+    left: 370px;
+    top: 3px;
+}
+
+.bC_back_btn:hover
+{
+    background-image: url(/static/img/global/breadcrumbBtns_back_alt.png);
+}
+
+.bC_save_btn
+{
+    display: block;
+    width: 80px;
+    height: 19px;
+    background-image: url(/static/img/global/breadcrumbBtns_save.png);
+    position: absolute;
+    left: 452px;
+    top: 3px;
+}
+
+.bC_save_btn:hover
+{
+    background-image: url(/static/img/global/breadcrumbBtns_save_alt.png);
+}
+
+.bC_next_btn
+{
+    display: block;
+    width: 81px;
+    height: 19px;
+    background-image: url(/static/img/global/breadcrumbBtns_next.png);
+    position: absolute;
+    left: 532px;
+    top: 3px;
+}
+
+.bC_next_btn:hover
+{
+    background-image: url(/static/img/global/breadcrumbBtns_next_alt.png);
+}
+
+.bC_backToTop_btn
+{
+    display: block;
+    width: 113px;
+    height: 19px;
+    background-image: url(/static/img/global/breadcrumbBtns_backToTop.png);
+    position: absolute;
+    left: 871px;
+    top: 3px;
+}
+
+.bC_backToTop_btn:hover
+{
+    background-position: 0px -19px;
+}
+
+
+.fatGreyTitles
+{
+    margin-left: 76px;
+    margin-bottom: 20px;
+}
+
+ul li
+{
+    list-style-type: disc;
+    margin-bottom: 14px;
+}
+
+#policies_header
+{
+    width: 133px;
+    height: 25px;
+    background-image: url(/static/img/agent/policies/global/greyHeader_policies.png);
+    margin: 50px 0px 35px 63px;
+}
+
+/* Policy ID and Policy Type Area */
+#topArea_wrapper
+{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#topArea
+{
+    width: 100%;
+}
+
+#policyId_topWrapper
+{
+    width: 466px;
+    height: 49px;
+    float: left;
+    margin: 0px 0px 15px 66px;
+}
+
+#policies_backToList_btn
+{
+    display: block;
+    width: 113px;
+    height: 19px;
+    background-image: url(/static/img/agent/claims/global/btn_backToList.png);
+    margin: -25px 0px 30px 70px;
+}
+
+#policies_backToList_btn:hover
+{
+    background-image: url(/static/img/agent/claims/global/btn_backToList_alt.png);
+}
+
+#policyId_topWrapper .littleGreyTitles
+{
+    margin-bottom: 8px;
+}
+
+#id_policyIdContent
+{
+    width: 100%;
+    font-size: 30px;
+    line-height: 30px;
+    margin: -2px 0px 0px -2px;
+}
+
+#policyType_wrapper
+{
+    width: 313px;
+    text-align: right;
+    float: right;
+    margin: 14px 69px 0px 0px;
+}
+
+#policyType_wrapper .littleGreyTitles
+{
+    margin-bottom: 6px;
+}
+
+#policyType
+{
+    width: 100%;
+    font-weight: bold;
+}
+
+/* Three Boxes */
+#threeBoxes_wrapper
+{
+    width: 908px;
+    margin: 0px 0px 0px 38px;
+}
+
+#threeBoxes_top
+{
+    width: 100%;
+    height: 30px;
+    background-image: url(/static/img/agent/policies/global/threeBoxes_top.png);
+}
+
+#threeBoxes_middle
+{
+    width: 100%;
+    background-image: url(/static/img/agent/policies/global/threeBoxes_repeater.png);
+    background-repeat: repeat-y;
+}
+
+#threeBoxes_bottom
+{
+    width: 100%;
+    height: 30px;
+    background-image: url(/static/img/agent/policies/global/threeBoxes_bottom.png);
+    margin-bottom: 7px;
+}
+
+#threeBoxes_middle div .littleGreyTitles
+{
+    margin-bottom: 8px;
+}
+
+#policyTerm_wrapper
+{
+    width: 78px;
+    float: left;
+    margin: 0px 0px 0px 27px;
+}
+
+#length_wrapper
+{
+    width: 68px;
+    float: left;
+    margin: 0px 0px 0px 35px;
+}
+
+#inceptionDate_wrapper
+{
+    width: 82px;
+    float: left;
+    margin: 0px 0px 0px 25px;
+}
+
+#policyStatus_wrapper
+{
+    width: 132px;
+    float: left;
+    margin: 0px 0px 0px 43px;
+}
+
+#renewalStatus_wrapper
+{
+    width: 132px;
+    float: left;
+    margin: 0px 0px 0px 39px;
+}
+
+#namedInsureds_wrapper
+{
+    width: 180px;
+    float: left;
+    margin: 0px 0px 0px 49px;
+}
+
+#policyStatus_content
+{
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+#renewalStatus_content
+{
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+#additionalDesc_wrap
+{
+    margin: 0px 0px 15px 43px;
+}
+
+#additionalDesc_wrap textarea
+{
+    width: 886px;
+    height: 60px;
+    padding: 5px;
+    resize: none;
+}
+
+
+
+/* Claims/Changes/QuoteApp Toggle */
+#quoteAppToggle_wrap,
+#fileClaim_wrap,
+#policyChangeToggle_wrap
+{
+    display: none;
+    float: right;
+    margin-right: 45px;
+}
+
+#quoteToggle_wrap,
+#appToggle_wrap,
+#newPolicyChangeToggle_wrap,
+#removePolicyChangeToggle_wrap
+{
+    display: none;
+}
+
+#quoteToggle_btn
+{
+    display: inline-block;
+    width: 29px;
+    height: 31px;
+    background-image: url(/static/img/global/icon_quoteAppToggle.png);
+    cursor: pointer;
+}
+
+#appToggle_btn
+{
+    display: inline-block;
+    width: 29px;
+    height: 31px;
+    background-image: url(/static/img/global/icon_quoteAppToggle.png);
+    background-position: 0px -30px;
+    cursor: pointer;
+}
+
+#btnWrap_fileAClaim
+{
+    display: inline-block;
+    width: 40px;
+    height: 30px;
+    background-image: url(/static/img/britecore/policies/id/topHalfBtn_fileAClaim.png);
+    background-position: -30px -2px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#newPolicyChangeToggle_btn
+{
+    display: inline-block;
+    width: 29px;
+    height: 31px;
+    background-image: url(/static/img/global/icon_quoteAppToggle.png);
+    cursor: pointer;
+}
+
+#removePolicyChangeToggle_btn
+{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-image: url(/static/img/global/cancel-quote.png);
+    cursor: pointer;
+}
+
+#quoteAppToggle_wrap .quoteApp_text,
+#fileClaim_wrap .littleGreyTitles,
+#policyChangeToggle_wrap .policyChangeToggle_text
+{
+    display: inline-block;
+    white-space: nowrap;
+    color: #000;
+    vertical-align: top;
+    margin-top: 4px;
+}
+
+#policyAppExample
+{
+    background-image: url(/static/img/agent/policies/appQuoteInstructions.png);
+    width: 229px;
+    height: 126px;
+    margin-left: 29px;
+    border: 1px solid #A8A8A8;
+}
+
+/* Header */
+/* Adopted from output CSS from new Bootstrap header. */
+
+.bc-nav {
+    background-color: #fff;
+    border-width: 0;
+    position: relative;
+    font-size: 16px;
+}
+
+.bc-nav:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.bc-nav:before {
+    content: '';
+    height: 1px;
+    width: 100%;
+    background-color: #b2b2b2;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+}
+
+.bc-nav .container-fluid {
+    position: relative;
+    margin: 0 3%;
+}
+
+.bc-nav__brand {
+    padding: 0.5em .5em .5em 0;
+    width: 23em;
+}
+
+.bc-nav__company {
+    color: #777;
+    display: inline;
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 1.3;
+    top: -3px;
+    position: relative;
+    margin: 0;
+    width: auto;
+    float: none;
+}
+
+.bc-nav__logo {
+    background-size: 152.5px 20px;
+    background-position: 0px 0px;
+    background-image: url('/static/img/bootstrap_template/bc_logo.png');
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0.8em 0 0.7em .1em;
+    width: 152.5px;
+    height: 20px;
+}
+
+.bc-nav__list {
+    max-height: none;
+    margin: 0;
+    border: 0;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+}
+
+.bc-nav__list ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: flex;
+
+    height: 100%;
+}
+
+.bc-nav__section {
+    -webkit-transition: 150ms background-color ease-in 15ms;
+    -moz-transition: 150ms background-color ease-in 15ms;
+    -ms-transition: 150ms background-color ease-in 15ms;
+    -o-transition: 150ms background-color ease-in 15ms;
+
+    /*Fallback for flex on older devices*/
+    display: inline-block;
+
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: flex;
+
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+
+    text-align: center;
+    min-width: 5.2em;
+    width: auto;
+    background-image: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.bc-nav__section:hover {
+  background-color: #f9f9f9;
+}
+
+.bc-nav__section:hover a {
+  color: #3c3c3c;
+}
+
+.bc-nav__link {
+    -webkit-transition: 150ms color ease-in 15ms;
+    -moz-transition: 150ms color ease-in 15ms;
+    -ms-transition: 150ms color ease-in 15ms;
+    -o-transition: 150ms color ease-in 15ms;
+    padding: .4em 0 1em;
+    color: #777 !important;
+    text-shadow: none;
+    display: block;
+    font-size: 14px !important;
+    text-decoration: none !important;
+}
+
+.bc-nav__link:hover,
+.bc-nav__link:active {
+    color: #3c3c3c;
+    text-decoration: none;
+}
+
+.bc-nav__link:focus {
+    color: #777;
+    text-decoration: none;
+}
+
+.bc-nav__link i {
+    color: inherit;
+    width: 100%;
+    font-size: 2.06em;
+    margin-bottom: 0.4em;
+    display: inline-block;
+}
+
+#liveChat_btn
+{
+    font-family: 'Open Sans', sans-serif;
+    float: right;
+    font-size: 13px;
+    color: #333;
+    margin: 3px 2px 0 0;
+    padding: 3px 4px;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    line-height: 14px;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+}
+
+#liveChat_btn:hover
+{
+    background-color: #ddd;
+    color: #000;
+}
+
+#header_bottom#agent
+{
+    position: absolute;
+    width: 984px;
+    height: 30px;
+}
+
+/* IE 8 Hack */
+@font-face {
+  font-family: "fontello";
+  src: url("../fonts/legacyHeaderIcons/fontello.eot");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/legacyHeaderIcons/fontello.eot?16633281');
+  src: url('../fonts/legacyHeaderIcons/fontello.eot?16633281#iefix') format('embedded-opentype'),
+       url('../fonts/legacyHeaderIcons/fontello.woff?16633281') format('woff'),
+       url('../fonts/legacyHeaderIcons/fontello.ttf?16633281') format('truetype'),
+       url('../fonts/legacyHeaderIcons/fontello.svg?16633281#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-cog:before { content: '\e800'; } /* 'î €' */
+.icon-user:before { content: '\e801'; } /* 'î ' */
+.icon-flash:before { content: '\e802'; } /* 'î ‚' */
+.icon-chart-bar:before { content: '\e803'; } /* 'î ƒ' */
+.icon-book:before { content: '\e804'; } /* 'î „' */
+.icon-umbrella:before { content: '\e805'; } /* 'î …' */
+.icon-comment:before { content: '\e806'; } /* 'î †' */
+.icon-credit-card:before { content: '\e807'; } /* 'î ‡' */
+
+#id_siteWrapper
+{
+    padding-bottom: 120px;
+}
+
+/* Manage Attachments*/
+#attachments_body2
+{
+    width: 100%;
+    display: block;
+}
+
+#manageAttachments_wrapper
+{
+    width: 878px;
+    margin: 0px 0px 80px 53px;
+    padding-top: 50px;
+}
+
+#manageAttachments_header
+{
+    width: 100%;
+    height: 110px;
+    background-image: url(/static/img/global/mt_attachments/manage_header.png);
+}
+
+#btn_addFolder
+{
+    display: block;
+    width: 90px;
+    height: 19px;
+    background-image: url(/static/img/global/mt_attachments/btn_addAFolder.png);
+    position: absolute;
+    left: 15px;
+    top: 10px;
+}
+
+#btn_addFolder:hover
+{
+    background-image: url(/static/img/global/mt_attachments/btn_addAFolder_alt.png);
+}
+
+#manageAttachments_instructions
+{
+    width: 710px;
+    position: absolute;
+    left: 80px;
+    top: -20px;
+    text-align: center;
+}
+
+#attachments_body
+{
+    margin-top: 30px;
+}
+
+/* Manage Attachments - Folder Row */
+.folderContainer
+{
+    overflow: hidden;
+}
+
+.folder_tab
+{
+    width: 675px;
+    height: 29px;/**/
+    padding: 18px 0px 0px 90px;
+}
+
+.folderIcon_closed
+{
+    width: 27px;
+    height: 20px;
+    float: left;
+    background-image: url(/static/img/global/mt_attachments/folder_closed.png);
+}
+
+.folderIcon_open
+{
+    width: 27px;
+    height: 20px;
+    float: left;
+    background-image: url(/static/img/global/mt_attachments/folder_open.png);
+}
+
+.folderTitle
+{
+    float: left;
+    margin: 2px 0px 0px 8px;
+}
+
+.addFileToFolder
+{
+    display: block;
+    width: 17px;
+    height: 19px;
+    float: right;
+    margin-right: 6px;
+    background-image: url(/static/img/global/icon_add.png);
+    cursor: pointer;
+}
+
+.removeFolder
+{
+    display: block;
+    width: 17px;
+    height: 19px;
+    float: right;
+    margin-right: 80px;
+    background-image: url(/static/img/global/icon_remove.png);
+    cursor: pointer;
+}
+
+/* Manage Attachments - File Row */
+.attachment_wrapper
+{
+    width: 557px;
+    height: 37px;
+    margin: 0px 0px -3px 126px;
+    background-image: url(/static/img/global/mt_attachments/attachmentRow_repeater.png);
+    background-repeat: repeat-x;
+}
+
+.attachmentTitle
+{
+    margin-top: 7px;
+    padding-right: 10px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: #fff;
+}
+
+.attachmentTitle span
+{
+    font-size: 11px;
+}
+
+.attachmentLink
+{
+    font-size: 11px;
+    color:     #000;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.removeAttachment
+{
+    display: block;
+    width: 13px;
+    height: 13px;
+    float: right;
+    margin-top: 9px;
+    padding-left: 10px;
+    background-image: url(/static/img/global/icon_remove_small.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Sort By Date Stuff */
+#sortByDate_checkboxWrap
+{
+    width: 150px;
+    position: absolute;
+    left: 18px;
+    top: 39px;
+}
+
+#sortByDate_checkboxWrap .littleBlackText
+{
+    position: absolute;
+    left: 22px;
+    top: 1px;
+    white-space: nowrap;
+}
+
+#ifSortByDate_wrap
+{
+    display: none;
+    width: 745px;
+    margin: 0px 0px 0px 94px;
+}
+
+#sortByDate_tableTop
+{
+    width: 100%;
+    height: 23px;
+    background-image: url(/static/img/global/dateSortedAttachments_tableTop2.png);
+}
+
+#sortByDate_tableRows
+{
+    width: 100%;
+    cursor: default;
+}
+
+.sortByDate_tableRow
+{
+    width: 100%;
+    height: 31px;
+    background-image: url(/static/img/global/dateSortedAttachments_tableRow2.png);
+}
+
+.sortByDate_tableRow_striped
+{
+    width: 100%;
+    height: 31px;
+    background-image: url(/static/img/global/dateSortedAttachments_tableRow2_gold.png);
+}
+
+.sortByDate_date
+{
+    width: 70px;
+    height: 14px;
+    overflow: hidden;
+    position: relative;
+    left: 12px;
+    top: 9px;
+}
+
+.sortByDate_name
+{
+    width: 475px;
+    height: 14px;
+    overflow: hidden;
+    position: absolute;
+    left: 112px;
+    top: 9px;
+}
+
+.sortByDate_tableRow .printStateWrap
+{
+    white-space: nowrap;
+    position: absolute;
+    left: 615px;
+    top: -4px;
+    color: #000;
+}
+
+.sortByDate_tableRow .print_state
+{
+    color: #000;
+}
+
+.sortByDate_tableRow_striped .printStateWrap
+{
+    white-space: nowrap;
+    position: absolute;
+    left: 615px;
+    top: -4px;
+    color: #000;
+}
+
+.sortByDate_tableRow_striped .print_state
+{
+    color: #000;
+}
+
+/* Pagination */
+#listPaginationWrapper
+{
+    display: none;
+    width: 555px;
+    margin-top: 5px;
+    padding-left: 10px;
+}
+
+#listPagination
+{
+    width: 473px;
+}
+
+.attachment_view
+{
+    font-size: 11px;
+    color: #000;
+}
+
+/* Print State Stuff */
+.ifPrintable_wrap
+{
+    display: none;
+}
+
+.printStateWrap
+{
+    white-space: nowrap;
+    position: absolute;
+    left: 583px;
+    top: 8px;
+}
+
+.printStateWrap a
+{
+    color: #A2A2A2;
+    font-size: 11px;
+}
+
+.printStateWrap span
+{
+    font-style: italic;
+}
+
+.verticalGreyBar
+{
+    width: 1px;
+    height: 34px;
+    position: absolute;
+    left: 569px;
+    top: -2px;
+    background-color: #A2A2A2;
+}
+
+[id="site_wrapper"] input, .modal-open [class^="popUp"] input, .modal-open .CSS-PopUp input
+{
+    padding: 2px; /* Yes */
+}
+
+[id="site_wrapper"] a, .modal-open [class^="popUp"] a, .modal-open .CSS-PopUp a
+{
+    font-size: 10px;
+    text-decoration: underline;
+    color: #158ED1;
+}
+
+a.bc_button:hover, .legacy-btn:hover {
+    background: -webkit-linear-gradient(#fafafa, #aaaaaa);
+    background: linear-gradient(#fafafa, #aaaaaa);
+    border: 1px solid #CCC;
+}
+a.bc_button:active, .legacy-btn:active {
+    background: -webkit-linear-gradient(#fafafa, #aaaaaa);
+    background: linear-gradient(#fafafa, #aaaaaa);
+    border: 1px solid #CCC;
+}
+
+a.bc_button, .legacy-btn {
+    /* By default this button will size to fit your text... */
+    /* Set up the font... family, weight, color, etc. */
+    font-family: Arial;
+    font-weight: 500;
+    font-size: 9px !important;
+    color: #494949 !important;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px #fff;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: pointer;
+
+    /* Make the  button look nice. =) */
+    display: block;
+    padding: .1em 7px;
+    border: 1px solid #AAA;
+    border-radius: 100px;
+    background: #e6e6e6;
+    background: -webkit-linear-gradient(#fafafa, #d7d7d7);
+    background: linear-gradient(#fafafa, #d7d7d7);
+}
+
+/* Convert image button to html-based button*/
+.legacy-btn__group {
+    display: block;
+    width: 100%;
+    max-width: 878px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+}
+
+.legacy-btn__group .legacy-btn {
+    border-radius: 0;
+    border-right-width: 0;
+}
+
+.legacy-btn__group .legacy-btn:first-child {
+    border-radius: 100px 0 0 100px;
+}
+
+.legacy-btn__group .legacy-btn:last-child {
+    border-radius: 0 100px 100px 0;
+    border-right-width: 1px;
+}
+
+.legacy-btn__group--border:before {
+    content: "";
+    background: #ddd;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: .5em;
+    right: .5em;
+}
+
+.legacy-btn {
+    display: inline-block;
+    margin-right: -4px;
+    padding: 1px 15px;
+    position: relative;
+}
+
+/* Button elements need a bit more top and bottom padding */
+button.legacy-btn {
+    padding: 3px 15px;
+}
+
+.legacy-tab {
+    background: linear-gradient(to bottom, #eaeaeb, #fff);
+    border: solid #bebebe;
+    border-width: 1px 1px 0 1px;
+    box-shadow: 1px -2px 6px -1px #d9d9d9, inset 1px 1px 1px #fff, inset -1px 1px 1px #fff;
+    color: #767676 !important;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Garamond", "EB Garamond", serif;
+    font-variant: small-caps;
+    font-size: 18px !important;
+    letter-spacing: 4px;
+    margin: 0 0 0 -2px;
+    padding: .5em .8em;
+    position: relative;
+    opacity: .5;
+    text-shadow: 0px 1px 4px #fff;
+    text-transform: none !important;
+    transition: opacity 120ms ease-in;
+}
+
+.legacy-tab__link {
+    cursor: inherit;
+    color: inherit !important;
+    font-size: inherit !important;
+    text-decoration: none !important;
+}
+
+.legacy-tab__link:hover {
+    text-decoration: none;
+}
+
+.legacy-tab--active, .legacy-tab:hover {
+    opacity: 1;
+}
+
+.legacy-tab--active::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: 1px;
+    background: #fff;
+}
+
+.legacy-tab__container {
+    width: 100%;
+    padding: 0 2em;
+    margin: 2em 0 3em;
+    box-sizing: border-box;
+    border-bottom: 1px solid #bebebe;
+}
+
+.legacy-title {
+    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "EB Garamond", "Times New Roman", serif;
+    font-variant: small-caps;
+    font-size: 1.5em;
+    letter-spacing: .2em;
+    line-height: 1.5;
+    color: #767676;
+}
+
+.legacy-title--sm {
+    font-size: 1.2em;
+}
+
+.legacy-title--lg {
+    font-size: 1.75em;
+}
+
+a.bc_button.med_button {
+    /* You can define further CSS classes like this one to create
+     * basic buttons with slightly differing styles.  */
+    width: 165px;
+}
+
+a.bc_button.button_bar {
+    /* You can define further CSS classes like this one to create
+     * basic buttons with slightly differing styles.  */
+    width: 90px;
+    margin-left: 1px;
+
+    border: 1px solid rgb(212, 203, 176);
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+
+    background: rgb(244, 241, 232);
+    background: -webkit-linear-gradient(rgb(250, 249, 244), rgb(234, 229, 207));
+    background: -moz-linear-gradient(rgb(250, 249, 244), rgb(234, 229, 207));
+    background: -ms-linear-gradient(rgb(250, 249, 244), rgb(234, 229, 207));
+    background: -o-linear-gradient(rgb(250, 249, 244), rgb(234, 229, 207));
+    background: linear-gradient(rgb(250, 249, 244), rgb(234, 229, 207));
+}
+
+a.bc_button.button_bar.two {
+    /* You can define further CSS classes like this one to create
+     * basic buttons with slightly differing styles.  */
+    width: 200px;
+    margin-left: 1px;
+
+    border: 1px solid rgb(212, 203, 176);
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+
+    background: rgb(244, 241, 232);
+    background: -webkit-linear-gradient(rgb(250, 249, 244), rgb(234, 229, 207));
+    background: -moz-linear-gradient(rgb(250, 249, 244), rgb(234, 229, 207));
+    background: -ms-linear-gradient(rgb(250, 249, 244), rgb(234, 229, 207));
+    background: -o-linear-gradient(rgb(250, 249, 244), rgb(234, 229, 207));
+    background: linear-gradient(rgb(250, 249, 244), rgb(234, 229, 207));
+}
+
+a.bc_button.button_bar.left {
+    border-radius: 100px 0px 0px 100px;
+    -webkit-border-radius: 100px 0px 0px 100px;
+    -moz-border-radius: 100px 0px 0px 100px;
+}
+
+a.bc_button.button_bar.right{
+    border-radius: 0px 100px 100px 0px;
+    -webkit-border-radius: 0px 100px 100px 0px;
+    -moz-border-radius: 0px 100px 100px 0px;
+}
+
+a.bc_button.button_bar:hover {
+    background: -webkit-linear-gradient(rgb(250, 246, 238), rgb(224, 209, 166));
+    background: -moz-linear-gradient(rgb(250, 246, 238), rgb(224, 209, 166));
+    background: -ms-linear-gradient(rgb(250, 246, 238), rgb(224, 209, 166));
+    background: -o-linear-gradient(rgb(250, 246, 238), rgb(224, 209, 166));
+    background: linear-gradient(rgb(250, 246, 238), rgb(224, 209, 166));
+    border: 1px solid #CCC;
+}
+a.bc_button.button_bar:active {
+    background: -webkit-linear-gradient(rgb(250, 246, 238), rgb(200, 185, 140));
+    background: -moz-linear-gradient(rgb(250, 246, 238), rgb(200, 185, 140));
+    background: -ms-linear-gradient(rgb(250, 246, 238), rgb(200, 185, 140));
+    background: -o-linear-gradient(rgb(250, 246, 238), rgb(200, 185, 140));
+    background: linear-gradient(rgb(250, 246, 238), rgb(200, 185, 140));
+    border: 1px solid #CCC;
+}
+
+div.bc_popup_title {
+    /* Used for things like a popup requesting more information. */
+    padding-top: 1.75em;
+
+    /* We should use this font stack for all serif text in the future. */
+    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "EB Garamond", "Times New Roman", serif;
+
+    font-variant: small-caps;
+    font-size: 1.75em;
+    letter-spacing: 0.2em;
+    line-height: 1.5em;
+    text-align: center;
+    color: grey;
+}
+
+div.bc_popup_title.small_title{
+    /* Used for things like vendor settings. */
+    padding-top: 2.5em;
+    font-size: 1.5em;
+    line-height: 1em;
+}
+
+html, .legacy-container
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000;
+    background-image: url(/static/img/tabsAndBackgrounds/siteBg_empty.png);
+    background-repeat: repeat-y;
+    background-position: center;
+}
+
+.legacy-container {
+    background-image: none;
+}
+
+#site_wrapper
+{
+    position: absolute;
+    width: 984px;
+    left: 50%;
+    background-color: #FFF;
+    margin: 0px 0px 0px -492px;
+}
+
+.registeredTrademark
+{
+    font-size: 10px;
+}
+
+.regTrade
+{
+    font-size: 8px;
+    top: -3px;
+}
+
+.squareGreyBullet
+{
+    width: 5px;
+    height: 5px;
+    background-color: #C7C7C7;
+}
+
+/* Boxes With Borders */
+.boxWht_bdrGry_2Sd
+{
+    background-color: #FFF;
+    border-left: 1px solid #C7C7C7;
+    border-right: 1px solid #C7C7C7;
+}
+
+.boxGry_bdrGry_2Sd
+{
+    background-color: #F2F2F2;
+    border-left: 1px solid #C7C7C7;
+    border-right: 1px solid #C7C7C7;
+}
+
+.boxWht_bdrGry_4Sd
+{
+    background-color: #FFF;
+    border: 1px solid #C7C7C7;
+}
+
+.boxGry_bdrGry_4Sd
+{
+    background-color: #F2F2F2;
+    border: 1px solid #C7C7C7;
+}
+
+/* Content */
+.inputDollarSign
+{
+    position: absolute;
+    left: 7px;
+    top: 5px;
+}
+
+.inputFactorSign
+{
+    position: absolute;
+    left: 7px;
+    top: 5px;
+    font-size: 9px;
+    color: #1A1A1A;
+}
+
+.goInputWrapper input
+{
+    float: left;
+    margin-right: 1px;
+}
+
+.go
+{
+    display: block;
+    width: 25px;
+    height: 24px;
+    background-image: url(/static/img/global/icon_go.png);
+    float: left;
+}
+
+.go:hover
+{
+    background-image: url(/static/img/global/icon_go_alt.png);
+}
+
+.remove
+{
+    display: block;
+    width: 17px;
+    height: 19px;
+    background-image: url(/static/img/global/icon_remove.png);
+    cursor: pointer;
+}
+
+/* Selectize also uses the .remove class for its remove button.
+   We don't want to show the remove image in that case. */
+.selectize-control .remove
+{
+    background: none;
+}
+
+.noRemove
+{
+    display: block;
+    width: 17px;
+    height: 19px;
+    background-image: url(/static/img/global/icon_noRemove.png);
+    cursor: default;
+}
+
+.smallRemove
+{
+    display: block;
+    width: 13px;
+    height: 13px;
+    background-image: url(/static/img/global/icon_remove_small.png);
+    cursor: pointer;
+}
+
+.move
+{
+    display: block;
+    width: 11px;
+    height: 20px;
+    background-image: url(/static/img/global/icon_move.png);
+    cursor: move;
+}
+
+.noMove
+{
+    display: block;
+    width: 11px;
+    height: 20px;
+    background-image: url(/static/img/global/icon_noMove.png);
+    cursor: default;
+}
+
+.edit
+{
+    display: block;
+    width: 17px;
+    height: 19px;
+    background-image: url(/static/img/global/icon_edit.png);
+    cursor: pointer;
+}
+
+.noEdit
+{
+    display: block;
+    width: 17px;
+    height: 19px;
+    background-image: url(/static/img/global/icon_noEdit.png);
+    cursor: default;
+}
+
+.rateEdit
+{
+    display: block;
+    width: 17px;
+    height: 19px;
+    background-image: url(/static/img/global/icon_rateEdit.png);
+}
+
+.add
+{
+    display: block;
+    width: 17px;
+    height: 19px;
+    background-image: url(/static/img/global/icon_add.png);
+    cursor: pointer;
+}
+
+.add_blue
+{
+    display: block;
+    width: 17px;
+    height: 19px;
+    background-image: url(/static/img/global/icon_add_blue.png);
+    cursor: pointer;
+}
+
+.archive
+{
+    display: block;
+    width: 23px;
+    height: 22px;
+    background-image: url(/static/img/global/icon_archive.png);
+    cursor: pointer;
+}
+
+.nsf_colored
+{
+    display: block;
+    width: 34px;
+    height: 19px;
+    background-image: url(/static/img/global/icon_nsf_colored.png);
+    cursor: pointer;
+}
+
+.nsf_grey
+{
+    display: block;
+    width: 34px;
+    height: 19px;
+    background-image: url(/static/img/global/icon_nsf_grey.png);
+    cursor: pointer;
+}
+
+.import
+{
+    display: block;
+    width: 19px;
+    height: 20px;
+    background-image: url(/static/img/global/icon_import.png);
+    cursor: pointer;
+}
+
+.copy
+{
+    display: block;
+    width: 20px;
+    height: 22px;
+    background-image: url(/static/img/global/icon_copy.png);
+    cursor: pointer;
+}
+
+.paste
+{
+    display: block;
+    width: 20px;
+    height: 22px;
+    background-image: url(/static/img/global/icon_paste.png);
+    cursor: pointer;
+}
+
+.docs
+{
+    display: block;
+    width: 20px;
+    height: 24px;
+    background-image: url(/static/img/global/icon_docs.png);
+    cursor: pointer;
+}
+
+.contactLink
+{
+    display: block;
+    width: 15px;
+    height: 27px;
+    background-image: url(/static/img/global/icon_contactLink.png);
+    cursor: pointer;
+}
+
+.accordionTableArrow
+{
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url(/static/img/global/accordion_closedArrow2_grey.png);
+    cursor: pointer;
+}
+
+/* Flag */
+.contactFlag
+{
+    display: none;
+    width: 18px;
+    height: 19px;
+    background-image: url(/static/img/global/icon_flag_orange_facingLeft.png);
+    position: absolute;
+    left: -43px;
+    top: 10px;
+}
+
+.calendar
+{
+    display: block;
+    width: 23px;
+    height: 21px;
+    background-image: url(/static/img/global/icon_calendar.png);
+}
+
+.view
+{
+    display: block;
+    width: 21px;
+    height: 26px;
+    background-image: url(/static/img/global/icon_view.png);
+}
+
+.back
+{
+    display: block;
+    width: 86px;
+    height: 19px;
+    background-image: url(/static/img/global/btn_back.png);
+}
+
+.back:hover
+{
+    background-image: url(/static/img/global/btn_back_alt.png);
+}
+
+.littleBlackArrow
+{
+    width: 9px;
+    height: 7px;
+    background-image: url(/static/img/global/littleBlackArrow.png);
+}
+
+/* Common Buttons */
+.btn_new
+{
+    display: block;
+    width: 83px;
+    height: 19px;
+    background-image: url(/static/img/britecore/popUps/btn_new.png);
+}
+
+.btn_new:hover
+{
+    background-image: url(/static/img/britecore/popUps/btn_new_alt.png);
+}
+
+.btn_done
+{
+    display: block;
+    width: 83px;
+    height: 19px;
+    background-image: url(/static/img/britecore/popUps/btn_done.png);
+}
+
+.btn_done:hover
+{
+    background-image: url(/static/img/britecore/popUps/btn_done_alt.png);
+}
+
+.btn_search
+{
+    display: block;
+    width: 90px;
+    height: 19px;
+    background-image: url(/static/img/global/btn_search.png);
+}
+
+.btn_search:hover
+{
+    background-image: url(/static/img/global/btn_search_alt.png);
+}
+
+.btn_get
+{
+    display: block;
+    width: 71px;
+    height: 19px;
+    background-image: url(/static/img/global/btn_get.png);
+}
+
+.btn_get:hover
+{
+    background-image: url(/static/img/global/btn_get_alt.png);
+}
+
+.btn_total
+{
+    display: block;
+    width: 83px;
+    height: 19px;
+    background-image: url(/static/img/global/btn_total.png);
+}
+
+.btn_total:hover
+{
+    background-image: url(/static/img/global/btn_total_alt.png);
+}
+
+.btn_submit
+{
+    display: block;
+    width: 83px;
+    height: 19px;
+    background-image: url(/static/img/global/btn_submit.png);
+}
+
+.btn_submit:hover
+{
+    background-image: url(/static/img/global/btn_submit_alt.png);
+}
+
+.btn_process
+{
+    display: block;
+    width: 83px;
+    height: 19px;
+    background-image: url(/static/img/global/btn_process.png);
+}
+
+.btn_process:hover
+{
+    background-image: url(/static/img/global/btn_process_alt.png);
+}
+
+.btn_browse
+{
+    display: block;
+    width: 90px;
+    height: 19px;
+    background-image: url(/static/img/global/btn_browse.png);
+}
+
+.btn_browse:hover
+{
+    background-image: url(/static/img/global/btn_browse_alt.png);
+}
+
+.btn_upload
+{
+    display: block;
+    width: 83px;
+    height: 19px;
+    background-image: url(/static/img/global/popUps/btn_upload.png);
+    margin: 0px 0px 0px 105px;
+}
+
+.btn_upload:hover
+{
+    background-image: url(/static/img/global/popUps/btn_upload_alt.png);
+}
+
+.btn_new
+{
+    display: block;
+    width: 83px;
+    height: 19px;
+    background-image: url(/static/img/global/popUps/btn_new.png);
+}
+
+.btn_new:hover
+{
+    background-image: url(/static/img/global/popUps/btn_new_alt.png);
+}
+
+.btn_done
+{
+    display: block;
+    width: 83px;
+    height: 19px;
+    background-image: url(/static/img/global/popUps/btn_done.png);
+    margin: 0px 0px 0px 105px;
+}
+
+.btn_done:hover
+{
+    background-image: url(/static/img/global/popUps/btn_done_alt.png);
+}
+
+.popUp2_btn_done
+{
+    display: block;
+    width: 83px;
+    height: 19px;
+    background-image: url(/static/img/global/popUps/btn_done.png);
+    margin: 0px 0px 0px 0px;
+}
+
+.popUp2_btn_done:hover
+{
+    background-image: url(/static/img/global/popUps/btn_done_alt.png);
+}
+
+.popUp3_btn_done
+{
+    display: block;
+    width: 83px;
+    height: 19px;
+    background-image: url(/static/img/global/popUps/btn_done.png);
+    margin: 0px 0px 0px 0px;
+}
+
+.popUp3_btn_done:hover
+{
+    background-image: url(/static/img/global/popUps/btn_done_alt.png);
+}
+
+.btn_ok
+{
+    display: block;
+    width: 83px;
+    height: 19px;
+    background-image: url(/static/img/global/btn_ok.png);
+}
+
+.btn_ok:hover
+{
+    background-image: url(/static/img/global/btn_ok_alt.png);
+}
+
+/* Common Button Combos */
+.btnComboWrap_cancelOrSave_and_ok
+{
+    width: 161px;
+    height: 19px;
+}
+
+.btn_cancelOrSave_cancel
+{
+    display: block;
+    width: 81px;
+    height: 19px;
+    background-image: url(/static/img/global/btn_cancelOrSave_cancel.png);
+    float: left;
+}
+
+.btn_cancelOrSave_cancel:hover
+{
+    background-image: url(/static/img/global/btn_cancelOrSave_cancel_alt.png);
+}
+
+.btn_cancelOrSave_save
+{
+    display: block;
+    width: 80px;
+    height: 19px;
+    background-image: url(/static/img/global/btn_cancelOrSave_save.png);
+    float: left;
+}
+
+.btn_cancelOrSave_save:hover
+{
+    background-image: url(/static/img/global/btn_cancelOrSave_save_alt.png);
+}
+
+.btns_saveExitWrap
+{
+    width: 180px;
+    height: 19px;
+}
+
+.btn_saveExit_save
+{
+    display: block;
+    width: 88px;
+    height: 100%;
+    background-image: url(/static/img/global/btn_saveOfSaveExit.png);
+    float: left;
+}
+
+.btn_saveExit_save:hover
+{
+    background-image: url(/static/img/global/btn_saveOfSaveExit_alt.png);
+}
+
+.btn_saveExit_saveExit
+{
+    display: block;
+    width: 92px;
+    height: 100%;
+    background-image: url(/static/img/global/btn_saveExitOfSaveExit.png);
+    float: left;
+}
+
+.btn_saveExit_saveExit:hover
+{
+    background-image: url(/static/img/global/btn_saveExitOfSaveExit_alt.png);
+}
+
+.btn_cancelOrOk_ok
+{
+    display: block;
+    width: 80px;
+    height: 19px;
+    background-image: url(/static/img/global/btn_cancelOrOk_ok.png);
+    float: left;
+}
+
+.btn_cancelOrOk_ok:hover
+{
+    background-image: url(/static/img/global/btn_cancelOrOk_ok_alt.png);
+}
+
+.btn_cancelOrDone_done
+{
+    display: block;
+    width: 80px;
+    height: 19px;
+    background-image: url(/static/img/global/btn_cancelOrDone_done.png);
+    float: left;
+}
+
+.btn_cancelOrDone_done:hover
+{
+    background-image: url(/static/img/global/btn_cancelOrDone_done_alt.png);
+}
+
+.btnCombo_cancelExitSaveExit_wrap
+{
+    width: 213px;
+    height: 19px;
+}
+
+.btnCombo_cancelExitSaveExit_c
+{
+    display: block;
+    width: 107px;
+    height: 100%;
+    background-image: url(/static/img/global/btnCombo_cancelExitSaveExit_c.png);
+}
+
+.btnCombo_cancelExitSaveExit_c:hover
+{
+    background-image: url(/static/img/global/btnCombo_cancelExitSaveExit_c_alt.png);
+}
+
+.btnCombo_cancelExitSaveExit_s
+{
+    display: block;
+    width: 106px;
+    height: 100%;
+    background-image: url(/static/img/global/btnCombo_cancelExitSaveExit_s.png);
+    position: absolute;
+    left: 107px;
+    top: 0px;
+}
+
+.btnCombo_cancelExitSaveExit_s:hover
+{
+    background-image: url(/static/img/global/btnCombo_cancelExitSaveExit_s_alt.png);
+}
+
+.btn_cancelOk_cancel
+{
+    display: block;
+    width: 81px;
+    height: 100%;
+    background-image: url(/static/img/global/btn_cancelOrSave_cancel.png);
+    float: left;
+}
+
+.btn_cancelOk_cancel:hover
+{
+    background-image: url(/static/img/global/btn_cancelOrSave_cancel_alt.png);
+}
+
+.btn_cancelOk_ok
+{
+    display: block;
+    width: 80px;
+    height: 100%;
+    background-image: url(/static/img/global/btn_cancelOrOk_ok.png);
+    float: left;
+}
+
+.btn_cancelOk_ok:hover
+{
+    background-image: url(/static/img/global/btn_cancelOrOk_ok_alt.png);
+}
+
+/* Pagination */
+.pagination_wrapper
+{
+    height: 18px;
+}
+
+.pagination
+{
+    text-align: center;
+    margin: 0px 0px 0px 40px;
+    padding-top: 3px;
+}
+
+.pagination span
+{
+    margin-right: 8px;
+    height: 10px;
+}
+
+.pagination span a
+{
+    color: #000;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.btn_firstPage
+{
+    display: block;
+    width: 17px;
+    height: 100%;
+    background-image: url(/static/img/global/pagination_firstPage.png);
+    float: left;
+}
+
+.btn_previousPage
+{
+    display: block;
+    width: 14px;
+    height: 100%;
+    background-image: url(/static/img/global/pagination_previousPage.png);
+    float: left;
+    margin-left: 3px;
+}
+
+.btn_nextPage
+{
+    display: block;
+    width: 14px;
+    height: 100%;
+    background-image: url(/static/img/global/pagination_nextPage.png);
+    float: right;
+    margin-right: 3px;
+}
+
+.btn_lastPage
+{
+    display: block;
+    width: 17px;
+    height: 100%;
+    background-image: url(/static/img/global/pagination_lastPage.png);
+    float: right;
+}
+
+.currentPage
+{
+    font-weight: bold;
+    background-color: #DADADA;
+    padding: 2px 4px 2px 4px;
+}
+
+/* Dividers */
+.goldDivider
+{
+    width: 813px;
+    height: 1px;
+    background-image: url(/static/img/britecore/lines/policyTypes/goldDivider.png);
+}
+
+.goldDivider_wide
+{
+    width: 885px;
+    height: 1px;
+    background-image: url(/static/img/global/goldPageDivider_wide.png);
+}
+
+/* Accordions */
+.goldBox_accordionTop
+{
+    display: block;
+    width: 882px;
+    height: 50px;
+}
+
+.goldBox_Arrow
+{
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url(/static/img/britecore/lines/policyTypes/goldBox_top_closedArrow.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    margin: 0px 0px 0px 843px;
+    padding-top: 25px;
+}
+
+.goldBox_accordionMiddle
+{
+    width: 882px;
+    background-image: url(/static/img/britecore/lines/policyTypes/goldBox_middleRepeater.png);
+    background-repeat: repeat-y;
+}
+
+.goldBox_accordionBottom
+{
+    width: 882px;
+    height: 19px;
+    background-image: url(/static/img/britecore/lines/policyTypes/goldBox_footer.png);
+}
+
+.greyBox_accordionTop
+{
+    display: block;
+    width: 882px;
+    height: 50px;
+}
+
+.greyBox_Arrow
+{
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url(/static/img/britecore/lines/policyTypes/goldBox_top_closedArrow.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    margin: 0px 0px 0px 843px;
+    padding-top: 25px;
+}
+
+.greyBox_accordionMiddle
+{
+    width: 882px;
+    background-image: url(/static/img/britecore/lines/editLineItem/greyBox_middleRepeater.png);
+    background-repeat: repeat-y;
+}
+
+.greyBox_accordionBottom
+{
+    width: 882px;
+    height: 19px;
+    background-image: url(/static/img/britecore/lines/editLineItem/greyBox_footer.png);
+}
+
+/* Stamps: Test, Demo, and Preload */
+#testingStamp
+{
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 15px;
+}
+
+.stamp_demo
+{
+    width: 96px;
+    height: 38px;
+    background-image: url(/static/img/misc/siteStamps.png);
+}
+
+.stamp_test
+{
+    width: 87px;
+    height: 37px;
+    background-image: url(/static/img/misc/siteStamps.png);
+    background-position: 0px -76px;
+}
+
+.stamp_preload
+{
+    width: 137px;
+    height: 38px;
+    background-image: url(/static/img/misc/siteStamps.png);
+    background-position: 0px -38px;
+}
+
+/* Oops Popup */
+#oopsStamp
+{
+    position: fixed;
+    top: 70px;
+    left: -2px;
+    height: 51px;
+    width: 18px;
+    background-image: url(/static/img/global/oopsStamp.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-color: #c1272d;
+    border: 1px solid #F15A24;
+    z-index: 100;
+    /* display: none; */
+}
+
+#oopsLabel
+{
+    position: absolute;
+    top: 17px;
+    left: -880px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    text-shadow: 1px 1px 1px #000;
+}
+
+#oopsContentWrapper
+{
+    position: fixed;
+    top: 123px;
+    left: -880px;
+    width: 859px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    color: #999;
+    box-shadow: 0px 10px 15px #aaa;
+    z-index: 100;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+#oopsContentWrapper a
+{
+    font-size: 12px;
+}
+
+/* Unordered List Styling */
+ul
+{
+    list-style-type: none;
+    list-style: none;
+    padding: 6px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+li
+{
+    background-image: url(/static/img/global/squareGreyBullet.png);
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+    padding-left: 14px;
+}
+
+/* Ajax Suggestion */
+.ajaxSuggestionList
+{
+    position: absolute;
+    background-color: #fafafa;
+    border: 1px solid #b3b3b3;
+    padding: 0px 0px 0px 0px;
+}
+
+.suggestionWrapper
+{
+    color: #666;
+    border-bottom: 1px solid #f3f3f3;
+    list-style: none;
+    padding-left: 20px;
+    padding-top: 18px;
+    padding: 18px 0px 15px 20px;
+    margin: 0px 0px 0px 0px;
+}
+
+.ajaxSuggestionList li
+{
+    background-image: none;
+}
+
+.ajaxSuggestionList li.unSelectedSuggestionItem
+{
+    background-color: #fafafa;
+}
+
+.ajaxSuggestionList li.selectedSuggestionItem
+{
+    background-color: #e9e9e9;
+}
+
+.ajaxSuggestBullet
+{
+    display: none;
+    width: 0px;
+    height: 0px;
+}
+
+.autoSuggest_extraHTML
+{
+    margin-top: 2px;
+    font-size: 10px;
+    min-height: 45px;
+}
+
+/* Auto-Suggest Arrows */
+.autoSuggest_topOrBottom
+{
+    height: 18px;
+    list-style: none;
+    background-color: #dedede;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.autoSuggest_topOrBottom.down
+{
+    margin: -15px 0px 0px 0px;
+}
+
+.autoSuggest_topOrBottom img
+{
+    width: 13px;
+    height: 18px;
+}
+
+/* AutoComplete Styles */
+.autoCompleteContainer {
+    position: absolute;
+    background-color: #fafafa;
+    border: 1px solid #b3b3b3;
+    max-height: 20em;
+    overflow: scroll;
+}
+
+.autoCompleteRow {
+    color: #666;
+    border-bottom: 1px solid #f3f3f3;
+    padding-left: 5px;
+}
+
+.hover {
+    background-color: #e9e9e9;
+}
+
+/* Little Grey Title Affecting Inputs Fix */
+.littleGreyTitles select
+{
+    font-size: 12px;
+}
+
+.littleGreyTitles input
+{
+    font-size: 12px;
+}
+
+.littleBlackText select
+{
+    font-size: 12px;
+}
+
+.littleBlackText input
+{
+    font-size: 12px;
+}
+
+textarea
+{
+    border: 1px solid #BABABA;
+}
+
+/* Top Loading Bar */
+.loadingTextWrapper
+{
+    background-image: url(/static/img/global/topLoadingBarBg.png);
+    background-repeat: repeat-x;
+}
+
+.britecoreThrobber
+{
+    width: 57px;
+    height: 27px;
+    background-image: url(/static/img/global/briteCoreThrobber2.gif);
+    float: left;
+    margin: -6px 5px 0px 15px;
+}
+
+.loadingText
+{
+    color: #666666;
+    float: left;
+    margin: 1px 0px 0px 0px;
+}
+
+.popUpmodal
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.modal
+{
+    overflow: hidden;
+    position: absolute;
+    background-color: transparent;
+    left: 0;
+}
+
+/* Text */
+.regularBlueLinks
+{
+    font-size: 12px;
+    text-decoration: underline;
+    color: #158ED1;
+}
+
+.tenPxGreyTitles
+{
+    font-size: 9px;
+}
+
+.littleGreyTitles
+{
+    font-size: 11px;
+    line-height: 13px;
+    color: #919191;
+    cursor: default;
+}
+
+.fatGreyTitles
+{
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 18px;
+    color: #a2a2a2;
+    cursor: default;
+}
+
+.littleGoldTitles
+{
+    font-size:11px;
+    line-height: 13px;
+    color: #C9bb91;
+    cursor: default;
+}
+
+.littleBlackText
+{
+    font-size: 11px;
+    line-height: 13px;
+    color: #000;
+    cursor: default;
+}
+
+.dollarText
+{
+    font-size: 14px;
+    line-height: 13px;
+    color: #000;
+    cursor: default;
+}
+
+.regularBlackText
+{
+    font-size: 12px;
+    line-height: 14px;
+    color: #000;
+    cursor: default;
+}
+
+.regularBlackLinks
+{
+    font-size: 12px;
+    text-decoration: underline;
+    color: #000;
+}
+
+.regularGreyText
+{
+    font-size: 12px;
+    line-height: 14px;
+    color: #a2a2a2;
+}
+
+.tT1
+{
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: .5px;
+    height: 12px;
+    color: #919191;
+    position: absolute;
+    top: 13px;
+    text-align: center;
+    cursor: default;
+}
+
+.tT2, .tT3
+{
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: .5px;
+    height: 12px;
+    color: #919191;
+    position: absolute;
+    top: 2px;
+    text-align: center;
+    cursor: default;
+}
+
+/* Colors */
+.deepRed
+{
+    color: #d20000 !important;
+}
+
+.clr_grey
+{
+    color: #919191;
+}
+
+.clr_darkerGrey
+{
+    color: #808080;
+}
+
+.black
+{
+    color: #000;
+}
+
+.green
+{
+    color: #338042;
+}
+
+.yellow
+{
+    color: #bd8d26;
+}
+
+.zebraStripes
+{
+    background-color: #F7F7F7;
+}
+
+/* Release Warning Box */
+#releaseImminent_wrap
+{
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    padding: 13px 16px 12px 16px;
+    border: 1px solid #A60000;
+    background-color: #000;
+    z-index: 5;
+}
+
+#rI_icon
+{
+    width: 43px;
+    height: 37px;
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    background-image: url(/static/img/global/icon_newReleaseWarning.png);
+}
+
+#rI_header
+{
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFF;
+    margin: 0px 0px 6px 50px;
+}
+
+#rI_text
+{
+    color: #FFF;
+    margin-left: 50px;
+}
+
+#rI_text span
+{
+    font-weight: bold;
+}
+
+.s3_attachment_uploading
+{
+    padding-left: 2em;
+    background-image: url('/static/img/global/storage_spinner.gif');
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.attachment_link_not_ready
+{
+    cursor: wait;
+    text-decoration: none;
+}
+
+
+/*
+.txt_btn1
+{
+    color: #262626;
+    text-decoration: none;
+    text-shadow: 1px 1px 0px #FFF;
+}
+
+.txt_btn1 div
+{
+    font-size: 9px;
+    line-height: 9px;
+    letter-spacing: 1px;
+    width: 100%;
+    height: 0px;
+    top: 5px;
+    text-align: center;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+*/
+
+.strikethrough
+{
+    background: url("/static/img/global/strike.png") repeat-x center !important;
+}
+/* CSS for Generic Paging Table w/o Border Images */
+.genericTable_rows,
+.genericTablePageControls,
+.searchWrapper,
+.genericTable_row.no_results {
+    width: 600px;
+}
+
+.genericTable_row,
+.genericTablePageControls {
+    display: block;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-top: 1px solid rgb(220, 220, 220);
+}
+
+.genericTablePageControls .pagination {
+    height: 0px;
+    margin-left: 20px;
+}
+
+.editRemove_wrapper.genericTable_row {
+    width: 45px;
+    top: 2px;
+    margin-right: 0px;
+}
+
+.genericTable_row > div,
+.genericTable_row > .editRemove_wrapper > div,
+.genericTable_header {
+    float: left;
+}
+
+.genericTable_row > .editRemove_wrapper > div {
+    margin-left: 5px;
+    margin-right: 0px;
+}
+
+.genericTable_headers {
+    padding-top: 20px;
+    margin-left: 51px;
+    font-weight: 800;
+    margin-bottom: 3px;
+    height: 17px;
+}
+
+.odd.genericTable_row {
+    background-color: rgb(243, 243, 243);
+    height: 17px;
+    clear: both;
+}
+
+.even.genericTable_row {
+    background-color: rgb(250, 250, 250);
+    height: 17px;
+    clear: both;
+}
+
+.genericTable_row.no_results {
+    color: red;
+    font-size: 16px;
+    font-weight: 800;
+    text-align: center;
+}
+
+/*
+
+These are font awesome icons selected through icomoon, which allows us to subset FA.
+
+So, users download only icons we are using. To add a new font-awesome icon,
+you can import *selection.json* back to the IcoMoon app.
+
+From there, chose the new icon, and re-export the selection as font.
+
+Then replace the icon code (but not FA utility classes) below.
+  - You'll need to copy over the new .woff file as well.
+  - .woff2 file created using the google woff2 compressor: https://github.com/google/woff2
+*/
+
+@font-face {
+    font-family: "bc-fontawesome";
+    src: url("/static/css/fonts/font-awesome/bc-fontawesome.woff2?v5") format("woff2"),
+         url("/static/css/fonts/font-awesome/bc-fontawesome.woff?v5") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.fa {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: "bc-fontawesome";
+    display: inline-block;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.lt-ie9 i.fa {
+    display: none; /* Since icons aren't supported on ie8/7, hide element */
+}
+
+/* makes the font 33% larger relative to the icon container */
+.fa-lg {
+  font-size: 1.33333333em;
+  line-height: .75em;
+  vertical-align: -15%;
+}
+.fa-2x {
+  font-size: 2em;
+}
+.fa-3x {
+  font-size: 3em;
+}
+.fa-4x {
+  font-size: 4em;
+}
+.fa-5x {
+  font-size: 5em;
+}
+.fa-fw {
+  width: 1.28571429em;
+  text-align: center;
+}
+.fa-ul {
+  padding-left: 0;
+  margin-left: 2.14285714em;
+  list-style-type: none;
+}
+.fa-ul > li {
+  position: relative;
+}
+.fa-li {
+  position: absolute;
+  left: -2.14285714em;
+  width: 2.14285714em;
+  top: .14285714em;
+  text-align: center;
+}
+.fa-li.fa-lg {
+  left: -1.85714286em;
+}
+.fa-border {
+  padding: .2em .25em .15em;
+  border: solid .08em #eeeeee;
+  border-radius: .1em;
+}
+.fa-pull-left {
+  float: left;
+}
+.fa-pull-right {
+  float: right;
+}
+.fa.fa-pull-left {
+  margin-right: .3em;
+}
+.fa.fa-pull-right {
+  margin-left: .3em;
+}
+/* Deprecated as of 4.4.0 */
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+.fa.pull-left {
+  margin-right: .3em;
+}
+.fa.pull-right {
+  margin-left: .3em;
+}
+.fa-spin {
+  animation: fa-spin 2s infinite linear;
+}
+.fa-pulse {
+  animation: fa-spin 1s infinite steps(8);
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+.fa-rotate-90 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  transform: rotate(90deg);
+}
+.fa-rotate-180 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  transform: rotate(180deg);
+}
+.fa-rotate-270 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  transform: rotate(270deg);
+}
+.fa-flip-horizontal {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  transform: scale(-1, 1);
+}
+.fa-flip-vertical {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  transform: scale(1, -1);
+}
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical {
+  filter: none;
+}
+.fa-stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle;
+}
+.fa-stack-1x,
+.fa-stack-2x {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.fa-stack-1x {
+  line-height: inherit;
+}
+.fa-stack-2x {
+  font-size: 2em;
+}
+.fa-inverse {
+  color: #ffffff;
+}
+
+/* Start of icons */
+.fa-search:before {
+  content: "\f002";
+}
+.fa-envelope-o:before {
+  content: "\f003";
+}
+.fa-heart:before {
+  content: "\f004";
+}
+.fa-user:before {
+  content: "\f007";
+}
+.fa-check:before {
+  content: "\f00c";
+}
+.fa-close:before {
+  content: "\f00d";
+}
+.fa-remove:before {
+  content: "\f00d";
+}
+.fa-times:before {
+  content: "\f00d";
+}
+.fa-search-plus:before {
+  content: "\f00e";
+}
+.fa-cog:before {
+  content: "\f013";
+}
+.fa-gear:before {
+  content: "\f013";
+}
+.fa-trash-o:before {
+  content: "\f014";
+}
+.fa-home:before {
+  content: "\f015";
+}
+.fa-file-o:before {
+  content: "\f016";
+}
+.fa-clock-o:before {
+  content: "\f017";
+}
+.fa-download:before {
+  content: "\f019";
+}
+.fa-refresh:before {
+  content: "\f021";
+}
+.fa-list-alt:before {
+  content: "\f022";
+}
+.fa-lock:before {
+  content: "\f023";
+}
+.fa-book:before {
+  content: "\f02d";
+}
+.fa-print:before {
+  content: "\f02f";
+}
+.fa-pencil:before {
+  content: "\f040";
+}
+.fa-question-circle:before {
+  content: "\f059";
+}
+.fa-info-circle:before {
+  content: "\f05a";
+}
+.fa-mail-forward:before {
+  content: "\f064";
+}
+.fa-share:before {
+  content: "\f064";
+}
+.fa-plus:before {
+  content: "\f067";
+}
+.fa-minus:before {
+  content: "\f068";
+}
+.fa-exclamation-circle:before {
+  content: "\f06a";
+}
+.fa-exclamation-triangle:before {
+  content: "\f071";
+}
+.fa-warning:before {
+  content: "\f071";
+}
+.fa-comment:before {
+  content: "\f075";
+}
+.fa-retweet:before {
+  content: "\f079";
+}
+.fa-folder:before {
+  content: "\f07b";
+}
+.fa-folder-open:before {
+  content: "\f07c";
+}
+.fa-bar-chart:before {
+  content: "\f080";
+}
+.fa-bar-chart-o:before {
+  content: "\f080";
+}
+.fa-comments:before {
+  content: "\f086";
+}
+.fa-sign-out:before {
+  content: "\f08b";
+}
+.fa-unlock:before {
+  content: "\f09c";
+}
+.fa-credit-card:before {
+  content: "\f09d";
+}
+.fa-bell-o:before {
+  content: "\f0a2";
+}
+.fa-wrench:before {
+  content: "\f0ad";
+}
+.fa-chain:before {
+  content: "\f0c1";
+}
+.fa-link:before {
+  content: "\f0c1";
+}
+.fa-flask:before {
+  content: "\f0c3";
+}
+.fa-copy:before {
+  content: "\f0c5";
+}
+.fa-files-o:before {
+  content: "\f0c5";
+}
+.fa-floppy-o:before {
+  content: "\f0c7";
+}
+.fa-save:before {
+  content: "\f0c7";
+}
+.fa-bars:before {
+  content: "\f0c9";
+}
+.fa-navicon:before {
+  content: "\f0c9";
+}
+.fa-reorder:before {
+  content: "\f0c9";
+}
+.fa-caret-down:before {
+  content: "\f0d7";
+}
+.fa-caret-up:before {
+  content: "\f0d8";
+}
+.fa-caret-left:before {
+  content: "\f0d9";
+}
+.fa-caret-right:before {
+  content: "\f0da";
+}
+.fa-sort:before {
+  content: "\f0dc";
+}
+.fa-unsorted:before {
+  content: "\f0dc";
+}
+.fa-sort-desc:before {
+  content: "\f0dd";
+}
+.fa-sort-down:before {
+  content: "\f0dd";
+}
+.fa-sort-asc:before {
+  content: "\f0de";
+}
+.fa-sort-up:before {
+  content: "\f0de";
+}
+.fa-bolt:before {
+  content: "\f0e7";
+}
+.fa-flash:before {
+  content: "\f0e7";
+}
+.fa-umbrella:before {
+  content: "\f0e9";
+}
+.fa-cloud-download:before {
+  content: "\f0ed";
+}
+.fa-cloud-upload:before {
+  content: "\f0ee";
+}
+.fa-bell:before {
+  content: "\f0f3";
+}
+.fa-file-text-o:before {
+  content: "\f0f6";
+}
+.fa-angle-left:before {
+  content: "\f104";
+}
+.fa-angle-right:before {
+  content: "\f105";
+}
+.fa-angle-up:before {
+  content: "\f106";
+}
+.fa-angle-down:before {
+  content: "\f107";
+}
+.fa-folder-o:before {
+  content: "\f114";
+}
+.fa-folder-open-o:before {
+  content: "\f115";
+}
+.fa-code:before {
+  content: "\f121";
+}
+.fa-location-arrow:before {
+  content: "\f124";
+}
+.fa-code-fork:before {
+  content: "\f126";
+}
+.fa-info:before {
+  content: "\f129";
+}
+.fa-ellipsis-h:before {
+  content: "\f141";
+}
+.fa-level-up:before {
+  content: "\f148";
+}
+.fa-external-link-square:before {
+  content: "\f14c";
+}
+.fa-sort-alpha-asc:before {
+  content: "\f15d";
+}
+.fa-sort-alpha-desc:before {
+  content: "\f15e";
+}
+.fa-sort-amount-asc:before {
+  content: "\f160";
+}
+.fa-sort-amount-desc:before {
+  content: "\f161";
+}
+.fa-sort-numeric-asc:before {
+  content: "\f162";
+}
+.fa-sort-numeric-desc:before {
+  content: "\f163";
+}
+.fa-apple:before {
+  content: "\f179";
+}
+.fa-windows:before {
+  content: "\f17a";
+}
+.fa-android:before {
+  content: "\f17b";
+}
+.fa-graduation-cap:before {
+  content: "\f19d";
+}
+.fa-mortar-board:before {
+  content: "\f19d";
+}
+.fa-file-pdf-o:before {
+  content: "\f1c1";
+}
+.fa-file-word-o:before {
+  content: "\f1c2";
+}
+.fa-file-excel-o:before {
+  content: "\f1c3";
+}
+.fa-file-powerpoint-o:before {
+  content: "\f1c4";
+}
+.fa-file-image-o:before {
+  content: "\f1c5";
+}
+.fa-file-photo-o:before {
+  content: "\f1c5";
+}
+.fa-file-picture-o:before {
+  content: "\f1c5";
+}
+.fa-file-archive-o:before {
+  content: "\f1c6";
+}
+.fa-file-zip-o:before {
+  content: "\f1c6";
+}
+.fa-file-audio-o:before {
+  content: "\f1c7";
+}
+.fa-file-sound-o:before {
+  content: "\f1c7";
+}
+.fa-file-movie-o:before {
+  content: "\f1c8";
+}
+.fa-file-video-o:before {
+  content: "\f1c8";
+}
+.fa-file-code-o:before {
+  content: "\f1c9";
+}
+.fa-share-alt:before {
+  content: "\f1e0";
+}
+.fa-rotate-left:before {
+  content: "\f0e2";
+}
+.fa-undo:before {
+  content: "\f0e2";
+}
+.fa-flag:before {
+  content: "\f024";
+}
+.fa-list-ul:before {
+  content: "\f0ca";
+}
+.fa-money:before {
+  content: "\f0d6";
+}
+.fa-dollar:before {
+  content: "\f155";
+}
+.fa-usd:before {
+  content: "\f155";
+}
+.fa-times-circle:before {
+  content: "\f057";
+}
+.fa-check-circle:before {
+  content: "\f058";
+}
+.fa-chain-broken:before {
+  content: "\f127";
+}
+.fa-unlink:before {
+  content: "\f127";
+}
