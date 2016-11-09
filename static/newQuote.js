@@ -219,6 +219,63 @@ var QuotingViewModel = function(){
         });
     }
 
+    /*
+    * This is for the mortgagee section to add A mortgagee
+    */
+
+    self.mortgagee = ko.observable(null);
+    self.mortgageDescription = ko.observable(null);
+    self.mortgageLoanNumber = ko.observable(null);
+    self.mortgageTypes = [1,2,3,4,5,6];
+    self.chosenMortgageType = ko.observable(null);
+    self.mortgageStatement = ko.observable(null);
+    self.canAddMortgage = ko.observable(false);
+
+    self.refreshMortgagee = function(){
+        self.mortgagee(null);
+        self.mortgageDescription(null);
+        self.mortgageLoanNumber(null);
+        self.chosenMortgageType(null);
+        self.mortgageStatement(null);
+        self.canAddMortgage(false);        
+    }
+
+    self.setMortgage = ko.computed(function(){
+        var mortgage = self.mortgagee($("#mortgageeName").val());
+        var mortgageDescription = self.mortgageDescription();
+        var mortgageLoanNumber = self.mortgageLoanNumber();
+        var chosenMortgageType = self.chosenMortgageType();
+        var mortgageStatement = self.mortgageStatement();
+        if(mortgage && mortgageDescription && mortgageLoanNumber && chosenMortgageType && mortgageStatement){
+            self.canAddMortgage(true);
+        }  else {
+            self.canAddMortgage(false);
+        }
+    },self);
+
+    self.addMortgage = function(){
+        // var mortgageName = $("#mortgageeName").val();
+        // console.log(self.mortgagee());
+
+        var mortgageDetails = {
+            mortgage : self.mortgagee(),
+            mortgageDescription : self.mortgageDescription(),
+            mortgageLoanNumber : self.mortgageLoanNumber(),
+            chosenMortgageType : self.chosenMortgageType(),
+            mortgageStatement : self.mortgageStatement()
+        }
+        $.ajax("/submit/mortgage", {
+            data: ko.toJSON(mortgageDetails),
+            type: "POST", contentType: "application/json",
+            success: function(result) { 
+                console.log(result) 
+                self.refreshMortgagee();
+            }
+        });
+
+    }
+
+
 
 
 
