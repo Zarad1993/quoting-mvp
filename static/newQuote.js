@@ -279,8 +279,10 @@ var QuotingViewModel = function(){
         console.log('Hello World');
         var doc = new jsPDF()
 
-        doc.text('Hello world!', 10, 10)
-        doc.save('a4.pdf')
+        doc.text('Yara ana ba7ebek kteer kteer kteer', 15,15)
+        // doc.save('yara.pdf')
+        doc.output("dataurlnewwindow");
+
     }
 
 
