@@ -51,7 +51,7 @@ var QuotingViewModel = function(){
         self.chosenFolderId(policy_view);
     };
 
-    self.goToFolder('Risks'); // By default be in the insureds Page
+    self.goToFolder('Rating'); // By default be in the insureds Page
 
 
     // Editable data
@@ -275,14 +275,16 @@ var QuotingViewModel = function(){
 
     }
 
+    /*
+    * Below we are using the jsPDF library that is a pdf generator using Javascript
+    * The function below simply creates a new pdf file in a new window..
+    * We also can prepare a template and save it with also preparing it for printing.
+    */
+
     self.downloadPDF = function(){
-        console.log('Hello World');
         var doc = new jsPDF()
-
-        doc.text('Yara ana ba7ebek kteer kteer kteer', 15,15)
-        // doc.save('yara.pdf')
+        doc.text('Welcome to the new Division : BriteApps', 15,15);
         doc.output("dataurlnewwindow");
-
     }
 
 
