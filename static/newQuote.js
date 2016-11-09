@@ -275,6 +275,14 @@ var QuotingViewModel = function(){
 
     }
 
+    self.downloadPDF = function(){
+        console.log('Hello World');
+        var doc = new jsPDF()
+
+        doc.text('Hello world!', 10, 10)
+        doc.save('a4.pdf')
+    }
+
 
 
 
