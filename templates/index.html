@@ -5,8 +5,11 @@
 
 	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap.css') }}">
 
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/awesomplete.css') }}">
+
 	<script src="{{url_for('static', filename='jquery.js')}}"></script>
 	<script src="{{url_for('static', filename='bootstrap.js')}}"></script>
+	<script src="{{url_for('static', filename='awesomplete.js')}}" async></script>
 	<title>Testing Python</title>
 	
 </head>
@@ -319,10 +322,23 @@
         <h4 class="modal-title" id="myModalLabel" style="text-align: center;">Insured Disclosure</h4>
       </div>
       <div class="modal-body">
-      		<h1>Todo This Modal For adding Mortgage</h1>
+      	<div class="littleGreyTitles Label">Mortgagee</div>
+	  	<input id="mortgageeName"
+	  		class="awesomplete form-control"
+	  		data-bind="value: mortgagee"
+       		data-list="Bank Of America,Bank Of Scotland,Bank Of Jordan,Bank Of Missouri,Bank Of Switzerland"/>
+       		<br><br>
+   		<div class="littleGreyTitles Label">Description</div>
+       	<input type="textarea" class="form-control" name="describe" data-bind="value: mortgageDescription">
+        <br><div class="littleGreyTitles Label">Loan Number</div>
+		<input class="form-control" type="number" id="example-tel-input" data-bind="value: mortgageLoanNumber">       	
+		<br><div class="littleGreyTitles Label">Type</div>
+		<select class="form-control" data-bind="options: mortgageTypes, value: chosenMortgageType"></select>
+		<br><div class="littleGreyTitles Label">Mortgaging Statement</div>
+       	<input type="textarea" class="form-control" name="" data-bind="value: mortgageStatement">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" data-bind="enable: canAddMortgage, click: addMortgage">Save changes</button>
       </div>
     </div>
   </div>
@@ -340,7 +356,9 @@
 <script type="text/html" id="Rating">
 	<br>
 	<div class="fatGreyTitles">Rating</div>
+
 </script>
+
 <script type="text/html" id="Billing">
 	<br>
 	<div class="fatGreyTitles">Billing</div>
