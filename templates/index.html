@@ -361,9 +361,67 @@
 <script type="text/html" id="Rating">
 	<br>
 	<div class="fatGreyTitles">Rating</div>
-	<h4>Trying to generate PDF files in Javascript</h4>
-	<button class="btn btn-success btn-lg" data-bind="click: downloadPDF">Print and Preview PDF</button>
+	<hr>
+	<h3 style="text-align:center">Primary Exposures</h3>
+	<hr>
+	<div style="margin-left:50px">
+		<table><tr><td style="width:99%;">Property One</td><td style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"  data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" 		aria-controls="collapseExample"></td></tr></table>
+		<div style="clear:right"></div>
+		<hr>
+	</div>
+	
 </script>
+
+<div class="collapse" id="collapseExample">
+	  <div class="well" style="text-align: center">
+			<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th style="width:5%;"></th>
+      <th style="width:110%;">Property One</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+    	<th></th>
+    	<th style="width:10%">Line Item</th>
+    	<th>Date</th>
+    	<th>Limit</th>
+    	<th>Deductible</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <td></td>
+      <th scope="row">2</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@TwBootstrap</td>
+    </tr>
+    <tr>
+    	<td></td>
+      <th scope="row">3</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+  </tbody>
+</table>
+	  </div>
+</div>
+
+<div style="text-align:center">
+	<h4>Generate PDF files in Javascript</h4>
+	<button class="btn btn-success btn-lg" data-bind="click: downloadPDF">Print and Preview PDF</button>
+</div>
 
 <script type="text/html" id="Billing">
 	<br>
