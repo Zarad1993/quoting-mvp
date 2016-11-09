@@ -7,9 +7,14 @@
 
 	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/awesomplete.css') }}">
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+
 	<script src="{{url_for('static', filename='jquery.js')}}"></script>
+
 	<script src="{{url_for('static', filename='bootstrap.js')}}"></script>
+
 	<script src="{{url_for('static', filename='awesomplete.js')}}" async></script>
+
 	<title>Testing Python</title>
 	
 </head>
@@ -356,6 +361,8 @@
 <script type="text/html" id="Rating">
 	<br>
 	<div class="fatGreyTitles">Rating</div>
+	<h4>Trying to generate PDF files in Javascript</h4>
+	<button class="btn bnt-success btn-lg" data-bind="click: downloadPDF">Download DEMO PDF</button>
 
 </script>
 
