@@ -372,51 +372,36 @@
 	
 </script>
 
+
+<!-- Start Collapse  Property Table -->
+
 <div class="collapse" id="collapseExample">
-	  <div class="well" style="text-align: center">
-			<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th style="width:5%;"></th>
-      <th style="width:110%;">Property One</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-    <tr>
-    	<th></th>
-    	<th style="width:10%">Line Item</th>
-    	<th>Date</th>
-    	<th>Limit</th>
-    	<th>Deductible</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td></td>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td></td>
-      <th scope="row">2</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@TwBootstrap</td>
-    </tr>
-    <tr>
-    	<td></td>
-      <th scope="row">3</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-  </tbody>
-</table>
+	  <div class="well">
+			<table class="table table-bordered table-inverse">
+				<thead>
+					<th style="width:30px;"></th>
+					<th>Propery 1</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="glyphicon glyphicon-arrow-right"  data-toggle="collapse" data-target="#nestedCollapseExample" aria-expanded="false" 		aria-controls="collapseExample"></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="collapse" id="nestedCollapseExample">
+				  <div>
+				  		<div class="fatGreyTitles">Rating Information</div>
+				  		<h2 style="text-align: center;">Fill Data Inside</h2>
+				  </div>
+			</div>
+
+
 	  </div>
 </div>
+
+<!-- End Collapse  Property Table -->
+
 
 <div style="text-align:center">
 	<h4>Generate PDF files in Javascript</h4>
