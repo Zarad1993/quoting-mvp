@@ -47,6 +47,11 @@ def getAllStates():
 	return jsonify(states)
 
 
+@app.route('/submit/mortgage', methods = ['POST'])
+def addMortgage():
+	return "Mortgage has Submitted"
+
+
 
 
 
