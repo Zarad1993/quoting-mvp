@@ -1,3 +1,5 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+
 body { font-family: Helvetica, Arial}
 .folders {background-color: #bbb; list-style-type: none; padding: 0; margin: 0; border-radius: 7px; 
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #d6d6d6), color-stop(0.4, #c0c0c0), color-stop(1,#a4a4a4)); 
@@ -3556,7 +3558,6 @@ html, .legacy-container
     font-size: 12px;
     line-height: 14px;
     color: #000;
-    background-image: url(/static/img/tabsAndBackgrounds/siteBg_empty.png);
     background-repeat: repeat-y;
     background-position: center;
 }
@@ -4473,7 +4474,6 @@ ul
 
 li
 {
-    background-image: url(/static/img/global/squareGreyBullet.png);
     background-repeat: no-repeat;
     background-position: 0px 5px;
     padding-left: 14px;
