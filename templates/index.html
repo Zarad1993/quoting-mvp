@@ -363,11 +363,9 @@
 	<div class="fatGreyTitles">Rating</div>
 	<hr>
 	<h3 style="text-align:center">Primary Exposures</h3>
-	<hr>
 	<div style="margin-left:50px">
-		<table><tr><td style="width:99%;">Property One</td><td style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"  data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" 		aria-controls="collapseExample"></td></tr></table>
+		<table data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" 		aria-controls="collapseExample"><tr><td style="width:99%;">Property One</td><td style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></td></tr></table>
 		<div style="clear:right"></div>
-		<hr>
 	</div>
 	
 </script>
@@ -375,7 +373,7 @@
 
 <!-- Start Collapse  Property Table -->
 
-<div class="collapse" id="collapseExample">
+<div class="collapse" id="collapseExample" data-bind="visible: $root.chosenFolderId() == 'Rating'">
 	  <div class="well">
 			<table class="table table-bordered table-inverse">
 				<thead>
@@ -392,7 +390,13 @@
 			<div class="collapse" id="nestedCollapseExample">
 				  <div>
 				  		<div class="fatGreyTitles">Rating Information</div>
-				  		<h2 style="text-align: center;">Fill Data Inside</h2>
+				  		<i class="btn btn-primary btn-xs" style="margin-left:5%;float:left">i</i>
+				  		<select class="form-control" style="width:20%;margin-left:1%;float:left" data-bind="options: statuses"></select>
+				  		<select class="form-control" style="width:20%;margin-left:35%;">
+				  			<option>First Option</option>
+				  			<option>Second Option</option>
+				  			<option>Third Option</option>
+				  		</select>
 				  </div>
 			</div>
 
@@ -403,7 +407,7 @@
 <!-- End Collapse  Property Table -->
 
 
-<div style="text-align:center">
+<div style="text-align:center" data-bind="visible: $root.chosenFolderId() == 'Rating'">
 	<h4>Generate PDF files in Javascript</h4>
 	<button class="btn btn-success btn-lg" data-bind="click: downloadPDF">Print and Preview PDF</button>
 </div>
