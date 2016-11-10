@@ -53,7 +53,6 @@ var QuotingViewModel = function(){
 
     self.goToFolder('Rating'); // By default be in the insureds Page
 
-
     // Editable data
     self.insureds = ko.observableArray([
     	new InsuredsPerson("", "Primary Named Insured")
@@ -79,7 +78,8 @@ var QuotingViewModel = function(){
 
     self.removeInterest = function(seat){
         self.interests.remove(seat);
-    };    	
+    };
+
 
     // Policy Type Part 
 
@@ -254,9 +254,6 @@ var QuotingViewModel = function(){
     },self);
 
     self.addMortgage = function(){
-        // var mortgageName = $("#mortgageeName").val();
-        // console.log(self.mortgagee());
-
         var mortgageDetails = {
             mortgage : self.mortgagee(),
             mortgageDescription : self.mortgageDescription(),
@@ -275,21 +272,34 @@ var QuotingViewModel = function(){
 
     }
 
+
+    self.downloadPDF = function(){
     /*
     * Below we are using the jsPDF library that is a pdf generator using Javascript
     * The function below simply creates a new pdf file in a new window..
     * We also can prepare a template and save it with also preparing it for printing.
     */
-
-    self.downloadPDF = function(){
         var doc = new jsPDF()
         doc.text('Welcome to the new Division : BriteApps', 15,15);
         doc.output("dataurlnewwindow");
     }
 
+    self.statuses = ['Test1', 'Test2', 'Test3', 'Test4'];
 
 
 
+    /*
+    *  LETS DISPLAY THE DATA IN THE TABLE
+    */
+    self.fakeData = ko.observableArray();
+    $.getJSON('/get/policy/wide', function(data){
+        if(data.result){
+            for(var i = 0; i < data.result.length; i++){
+                self.fakeData.push(data.result[i]); 
+            }
+        }
+        
+    });
 
 }
 
