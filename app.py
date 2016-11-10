@@ -1,4 +1,7 @@
-from flask import Flask , request,  render_template, jsonify
+from flask import Flask , request,  render_template, jsonify, Response
+
+import json
+
 
 """ Server Running on Flask port 5000 
 	Trying to comprehend the understanding of sending and recieving API requests
@@ -55,8 +58,10 @@ def addMortgage():
 
 
 
-"""Another route for getting the underwriting questions
-   All fake data for training purposes """
+"""
+	Another route for getting the underwriting questions
+	All fake data for training purposes 
+"""
 
 @app.route('/underwriting/questions', methods = ['GET'])
 def getQuestions():
@@ -72,6 +77,35 @@ def submitDisclosure():
 
 	return 'Successfully Closure Submitted'
 
+
+@app.route('/get/policy/wide', methods= ['GET'])
+def getPolicyWide():
+    fakeData = [{
+        'line_item' : 'Package Policy Discount',
+        'date' : '08/18/2016',
+        'limit' :  'null',
+        'deductible' : 'None', 
+        'pro_rata' : 'Pending', 
+        'annual_amount' : 'Pending',
+        'manual' : 'null'
+    },{
+        'line_item' : 'Policy Issue Fee',
+        'date' : '08/18/2016',
+        'limit' :  'null',
+        'deductible' : 'None', 
+        'pro_rata' : 'Pending', 
+        'annual_amount' : 'Pending',
+        'manual' : 'null'        
+    },{
+        'line_item' : 'General Information',
+        'date' : '08/18/2016',
+        'limit' :  'null',
+        'deductible' : 'None', 
+        'pro_rata' : 'Pending', 
+        'annual_amount' : 'Pending',
+        'manual' : 'null'
+    }]
+    return jsonify(result = fakeData)
 
 
 if __name__ == '__main__':
