@@ -51,7 +51,7 @@ var QuotingViewModel = function(){
         self.chosenFolderId(policy_view);
     };
 
-    self.goToFolder('Rating'); // By default be in the insureds Page
+    self.goToFolder('Attachments'); // By default be in the insureds Page
 
     // Editable data
     self.insureds = ko.observableArray([
@@ -302,6 +302,7 @@ var QuotingViewModel = function(){
     });
 
 }
+
 
 
 ko.applyBindings(new QuotingViewModel());
