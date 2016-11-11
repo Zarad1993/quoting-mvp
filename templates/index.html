@@ -3,6 +3,8 @@
 <head>
 	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
 
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/dropzone.css') }}">
+
 	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap.css') }}">
 
 	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/awesomplete.css') }}">
@@ -482,10 +484,37 @@
 	<div class="fatGreyTitles">Billing</div>
 
 </script>
+
+
 <script type="text/html" id="Attachments">
 	<br>
 	<div class="fatGreyTitles">Attachments</div>
+	<!-- <div class="dz-preview dz-file-preview">
+	  <div class="dz-details">
+	    <div class="dz-filename"><span data-dz-name></span></div>
+	    <div class="dz-size" data-dz-size></div>
+	    <img data-dz-thumbnail />
+	  </div>
+	  <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>
+	  <div class="dz-success-mark"><span>✔</span></div>
+	  <div class="dz-error-mark"><span>✘</span></div>
+	  <div class="dz-error-message"><span data-dz-errormessage></span></div>
+	</div> -->
+	<form action="/file-upload" class="dropzone">
+	  <div class="fallback">
+	    <input name="file" type="file" multiple addRemoveLinks/>
+	  </div>
+	</form>
 </script>
+
+
+
+
+
+
+
+
+
 
 <script type="text/html" id="Submit">
 	<br>
@@ -495,7 +524,7 @@
 
 
 
-
+<script src="{{url_for('static', filename='dropzone.js')}}"></script>
 <script src="{{url_for('static', filename='knockout.js')}}"></script>
 <script src="{{url_for('static', filename='newQuote.js')}}"></script>
 
