@@ -303,6 +303,26 @@ var QuotingViewModel = function(){
 
 }
 
-
+Dropzone.options.uploadWidget = {
+  paramName: 'file',
+  maxFilesize: 500, // MB
+  maxFiles: 15,
+  addRemoveLinks: true,
+  dictDefaultMessage: '<h4 style="color:lightblue">Drag an image here to upload, or click to select one</h4>',
+  acceptedFiles: 'image/*',
+  init: function() {
+    this.on('success', function( file, resp ){
+        console.log('SUCCESS  ' + resp);
+    });
+    this.on('thumbnail', function(file) {
+        console.log(file);
+        file.acceptDimensions();
+    });
+  },
+  accept: function(file, done) {
+    console.log('Hello World');
+    file.acceptDimensions = done;
+  }
+};
 
 ko.applyBindings(new QuotingViewModel());

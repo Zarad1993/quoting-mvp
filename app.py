@@ -55,6 +55,9 @@ def addMortgage():
 	return "Mortgage has Submitted"
 
 
+@app.route('/upload', methods = ['POST'])
+def uploadPic():
+	return "Photos Submitted"
 
 
 
