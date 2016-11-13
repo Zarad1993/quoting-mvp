@@ -306,13 +306,27 @@ var QuotingViewModel = function(){
 
     self.billingOptions = ['Annual', 'Escow Billing'];
     self.wayOfBilling = ko.observable();
-    self.chosenBilling = function(billing_way){
-        self.wayOfBilling(billing_way);
-    } 
 
     self.addPaymentMethod = function(){
         console.log('Testing this thing');
     }
+
+    /*
+    * Billing Person
+    */
+
+    self.billWhom = ['Mohammad Al Bakri', 'Scott Blevins'];
+    self.billPerson = ko.observable();
+    self.billHow = ko.observable();
+    self.billHowArray = ko.observableArray([]);
+    $.getJSON('/get/address/Mohammad', function(data){
+        if(data.result){
+            self.billHowArray.push(data.result);
+        }
+    })
+
+
+
 }
 
 Dropzone.options.uploadWidget = {
