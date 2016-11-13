@@ -635,10 +635,59 @@
 		      </tr>
 			</table>
 		</div>
+		<div style="clear:left"></div>
+		<div style="width: 108%;background-color: #F0F0F0;border-radius: 0px 0px 18px 18px;float:left;margin-left: -15px">
+			<table style="margin: 3%">
+			  <tr>
+			    <td style="width:70%;"><b>Total Due for Term</b></td>
+			    <td style="width:22.4%">$</td>
+			    <td>0.00</td>
+			  </tr>
+		  	</table>
+		</div>
 	</div>
-	<div class="container" style="margin-right:25%;width:30%;background-color:red;border:5px solid blue;border-radius: 18px;float:right" >
-		<h1>To fill the SEcond Container</h1>	
+	<div class="container" style="margin-left:6%;width:30%;background-color:#FFFFFF;border:1px solid #AFAFAF;border-radius: 18px;float:left;" >
+		<br>
+		<div style="width:250px;height:120.5px;">
+			<p>No Payment is due on submission</p>
+		</div>
 	</div>
+	<div style="clear:left"></div>
+	<br><br>
+	<div class="fatGreyTitles">Submission Details</div>
+	<div id="emailReceiptTo_wrap">
+        <div class="littleGreyTitles">Email Payment Receipt To: &nbsp;&nbsp;&nbsp;&nbsp; (Payment receipt will be sent once the policy is issued)</div>
+        <div>
+            <span class="littleGreyTitles">Name: </span><input type="text" name="submitReceiptName">
+        </div>
+        <div>
+            <span class="littleGreyTitles">Email: </span><input type="text" name="submitReceiptEmail" class="optionalEmail">
+            <span class="littleGreyTitles label">(Limit one email address)</span>
+        </div>
+    </div>
+    <hr>
+	<div id="emailConfirmationTo_wrap">
+        <div class="littleGreyTitles">Email Agent Submission Confirmation To: &nbsp;&nbsp;&nbsp;&nbsp; (Confirmation will be sent once the application is successfully submitted)</div>
+        <div>
+            <span class="littleGreyTitles">Name: </span><input type="text" name="submitConfirmName">
+        </div>
+        <div>
+            <span class="littleGreyTitles">Email: </span><input type="text" name="submitConfirmEmail" class="optionalEmail">
+            <span class="littleGreyTitles label">(Limit one email address)</span>
+        </div>
+        <div>
+            <span class="littleBlackText">Note: Agency contact email will be used for confirmation email if none is provided.</span>
+        </div>
+    </div>    
+    <div id="submitBound_wrap">
+        <input type="checkbox" name="submitBound" value="true" checked>
+        <span>Submit Bound</span>
+    </div>
+    <div class="fatGreyTitles fGTBottom" style="float:left"><p id="submit_application_text">You are ready to submit this application.</p>
+	    <br>
+	    <button class="btn btn-lg btn-success">Submit Application</button>
+    </div>
+
 </script>
 
 
