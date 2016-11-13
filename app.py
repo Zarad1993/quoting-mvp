@@ -110,6 +110,11 @@ def getPolicyWide():
     }]
     return jsonify(result = fakeData)
 
+@app.route('/get/address/<name>')
+def getAddress(name):
+    address = "%s / Amman Dahyet Al Rasheed, Antwon Dawoud St.Bld #7" % name
+    return jsonify(result= address)
+
 
 if __name__ == '__main__':
     app.secret_key = 'super secret key'
