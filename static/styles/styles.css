@@ -31,7 +31,9 @@ body { font-family: Helvetica, Arial}
 .viewMail .message { padding: 0 1.25em; }
 
 
-
+.cursor {
+    cursor: pointer;
+}
 /* TAKING BC's STYLE */
 #bCS_billing_contentWrap .fatGreyTitles
 {
