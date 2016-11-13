@@ -30,6 +30,24 @@ body { font-family: Helvetica, Arial}
 .viewMail .mailInfo label { color: #777; font-weight: bold; min-width: 2.75em; text-align:right; display: inline-block; }
 .viewMail .message { padding: 0 1.25em; }
 
+#submitArrow
+{
+    width: 274px;
+    height: 5px;
+    background-image: url(/static/img/submit_arrow.png);
+    position: absolute;
+    left: 291px;
+    top: 7px;
+}
+
+#submitBtns_wrap
+{
+    width: 243px;
+    height: 19px;
+    position: absolute;
+    left: 582px;
+    top: -1px;
+}
 
 .cursor {
     cursor: pointer;
@@ -2096,7 +2114,7 @@ body { font-family: Helvetica, Arial}
     margin-bottom: 75px;
 }
 
-#submitArrow
+/*#submitArrow
 {
     width: 274px;
     height: 5px;
@@ -2104,7 +2122,7 @@ body { font-family: Helvetica, Arial}
     position: absolute;
     left: 291px;
     top: 7px;
-}
+}*/
 
 #submitBtns_wrap
 {
