@@ -50,8 +50,7 @@ var QuotingViewModel = function(){
         location.hash = policy_view
         self.chosenFolderId(policy_view);
     };
-
-    self.goToFolder('Attachments'); // By default be in the insureds Page
+    self.goToFolder('Billing'); // By default be in the insureds Page
 
     // Editable data
     self.insureds = ko.observableArray([
@@ -301,6 +300,19 @@ var QuotingViewModel = function(){
         
     });
 
+    /*
+    * This is the Billing Section
+    */
+
+    self.billingOptions = ['Annual', 'Escow Billing'];
+    self.wayOfBilling = ko.observable();
+    self.chosenBilling = function(billing_way){
+        self.wayOfBilling(billing_way);
+    } 
+
+    self.addPaymentMethod = function(){
+        console.log('Testing this thing');
+    }
 }
 
 Dropzone.options.uploadWidget = {
