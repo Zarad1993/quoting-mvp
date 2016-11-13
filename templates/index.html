@@ -481,7 +481,73 @@
 
 <script type="text/html" id="Billing">
 	<br>
-	<div class="fatGreyTitles">Billing</div>
+	<div class="fatGreyTitles">Billing Schedule</div>
+	<b style="width:10%;margin-left: 6%">Billing Schedule</b><a style="margin-left: 1%" href="#">View Schedule</a>
+	<select class="form-control" style="width:10%;margin-left: 6%" data-bind="options: billingOptions, value: wayOfBilling"></select>
+	<br><br>
+	<div class="fatGreyTitles">Billing Method</div>
+	<b style="margin-left: 9%">Initial Invoice</b>
+	<div class="container" style="background-color:lightgrey;border: 20px grey red;border-radius: 10px;">
+			<br><br>
+			<div style="float: left;width:45%">
+				<b style="margin-left: 6%;">Bill Whom</b>
+				<select class="form-control" style="width:100%;margin-left: 6%;" data-bind="options: billingOptions, value: wayOfBilling"></select>
+			</div>
+			<div>
+				<b style="margin-left: 6%;float:left; ">Bill How</b>
+				<br>
+				<select class="form-control" style="width:45%;margin-left: 51%;" data-bind="options: billingOptions, value: wayOfBilling"></select>
+			</div>
+			<br>
+			<div style="clear:left"></div>
+			<span style="margin-left: 3%;" class="glyphicon glyphicon-plus cursor" data-bind="event: {click: addPaymentMethod }"></span>&nbsp;<span>Add A Payment Method</span>
+			<br>
+			<div class="container" style="margin-left:3%;background-color:#F2F2F2;border: 2px solid darkgrey;width:40%;float:left;border-radius: 10px;padding-left: 50px;">
+				<div style="width:45%">
+					<b style="margin-left: 7%;">Bill Whom</b>
+					<select class="form-control" style="width:100%;margin-left: 6%;" data-bind="options: billingOptions, value: wayOfBilling"></select>
+				</div>
+			</div>
+			<div class="container" style="margin-right:9%;background-color:#F2F2F2;border: 2px solid darkgrey;width:40%;float:right;border-radius: 10px;padding-left: 50px;">
+				<div style="width:45%">
+					<b style="margin-left: 6%;">Bill Whom</b>
+					<select class="form-control" style="width:100%;margin-left: 6%;" data-bind="options: billingOptions, value: wayOfBilling"></select>
+				</div>
+			</div>
+			<br>
+			<div style="clear:left;clear:right;margin-bottom:3%;"></div>
+	</div>
+	<br><br>
+	<b style="margin-left: 9%">Future Invoice</b>
+	<div class="container" style="background-color:lightgrey;border: 20px grey red;border-radius: 10px;">
+			<br><br>
+			<div style="float: left;width:45%">
+				<b style="margin-left: 6%;">Bill Whom</b>
+				<select class="form-control" style="width:100%;margin-left: 6%;" data-bind="options: billingOptions, value: wayOfBilling"></select>
+			</div>
+			<div>
+				<b style="margin-left: 6%;float:left; ">Bill How</b>
+				<br>
+				<select class="form-control" style="width:45%;margin-left: 51%;" data-bind="options: billingOptions, value: wayOfBilling"></select>
+			</div>
+			<br>
+			<div style="clear:left"></div>
+			<span style="margin-left: 3%;" class="glyphicon glyphicon-plus cursor" data-bind="event: {click: addPaymentMethod }"></span>&nbsp;<span>Add A Payment Method</span>
+			<br>
+			<div class="container" style="margin-left:3%;background-color:#F2F2F2;border: 2px solid darkgrey;width:40%;float:left;border-radius: 10px;padding-left: 50px;">
+				<div style="width:45%">
+					<b style="margin-left: 7%;">Bill Whom</b>
+					<select class="form-control" style="width:100%;margin-left: 6%;" data-bind="options: billingOptions, value: wayOfBilling"></select>
+				</div>
+			</div>
+			<div class="container" style="margin-right:9%;background-color:#F2F2F2;border: 2px solid darkgrey;width:40%;float:right;border-radius: 10px;padding-left: 50px;">
+				<div style="width:45%">
+					<b style="margin-left: 6%;">Bill Whom</b>
+					<select class="form-control" style="width:100%;margin-left: 6%;" data-bind="options: billingOptions, value: wayOfBilling"></select>
+				</div>
+			</div>
+			<div style="clear:left;clear:right;margin-bottom:3%;"></div>
+	</div>
 
 </script>
 
@@ -497,29 +563,25 @@
 	<br>
 	<div class="fatGreyTitles">Attachments</div>
 
-<div class="dz-preview dz-file-preview">
-  <div class="dz-image">
-    <img data-dz-thumbnail />
-  </div>
-  <div class="dz-details">
-    <div class="dz-size">
-      <span data-dz-size></span>
-    </div>
-    <div class="dz-filename">
-      <span data-dz-name></span>
-    </div>
-  </div>
-  <div class="dz-progress">
-    <span class="dz-upload" data-dz-uploadprogress></span>
-  </div>
-  <div class="dz-success-mark">
-  </div>
-</div>
+	<div class="dz-preview dz-file-preview">
+	  <div class="dz-image">
+	    <img data-dz-thumbnail />
+	  </div>
+	  <div class="dz-details">
+	    <div class="dz-size">
+	      <span data-dz-size></span>
+	    </div>
+	    <div class="dz-filename">
+	      <span data-dz-name></span>
+	    </div>
+	  </div>
+	  <div class="dz-progress">
+	    <span class="dz-upload" data-dz-uploadprogress></span>
+	  </div>
+	  <div class="dz-success-mark">
+	  </div>
+	</div>
 </script>
-
-
-
-
 
 
 
