@@ -1,7 +1,7 @@
 from flask import Flask , request,  render_template, jsonify, Response
 
 import json
-
+import os, sys
 
 """ Server Running on Flask port 5000 
 	Trying to comprehend the understanding of sending and recieving API requests
@@ -114,6 +114,8 @@ def getPolicyWide():
 def getAddress(name):
     address = "%s / Amman Dahyet Al Rasheed, Antwon Dawoud St.Bld #7" % name
     return jsonify(result= address)
+
+
 
 
 if __name__ == '__main__':

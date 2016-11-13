@@ -22,6 +22,54 @@
 </head>
 <body>
 	<h4>{{client}}</h4>
+	<div id="policies_header"></div>
+	<div id="topArea">
+        <div id="policyId_topWrapper">
+            <div class="littleGreyTitles">Policy ID</div>
+            <div id="id_policyIdContent">CMIC-2016-1573</div>
+            <div id="id_policyGroupNumberContent" style="display: none;"></div>
+        </div>
+        <div id="policyType_wrapper">
+            <div class="littleGreyTitles">Policy Type</div>
+            <div id="policyType">Homeowners</div>
+        </div>
+        <div class="clearFloat"></div>
+    </div>
+    <div style="clear:left;"></div>
+    <div id="threeBoxes_wrapper">
+        <div id="threeBoxes_top"></div>
+        <div id="threeBoxes_middle">
+            <div id="policyTerm_wrapper">
+                <div class="littleGreyTitles">Policy Term</div>
+                <div id="policyTerm">11/13/2016 - 11/13/2017</div>
+            </div>
+            <div id="length_wrapper">
+                <div class="littleGreyTitles">Length</div>
+                <div id="lengthSpan">1 Year</div>
+            </div>
+            <div id="inceptionDate_wrapper">
+                <div class="littleGreyTitles">Inception Date</div>
+                <div id="inceptionDate">11/13/2016</div>
+            </div>
+            <div id="policyStatus_wrapper">
+                <div class="littleGreyTitles">Policy Status</div>
+                <div id="policyStatus_content">Unsubmitted</div>
+                <div class="littleBlackText" id="policyStatus_reason"></div>
+            </div>
+            <div id="renewalStatus_wrapper">
+                <div class="littleGreyTitles">Renewal Status</div>
+                <div id="renewalStatus_content">Renew</div>
+                <div class="littleBlackText" id="renewalStatus_reason"></div>
+            </div>
+            <div id="namedInsureds_wrapper">
+                <div class="littleGreyTitles">Named Insured(s)</div>
+                <div id="namedInsureds_content">Mohammad Al Bakri, , </div>
+            </div>
+            <div class="clearFloat"></div>
+        </div>
+        <div id="threeBoxes_bottom"></div>
+    </div>
+    <div style="clear:left;"></div>
 <nav>
 	<ul class="legacy-tab_container"></ul>
 	<li class="legacy-tab legacy-tab--active" id="topTab_policySetup_static">
@@ -32,12 +80,13 @@
 
 
 
-<ul class="folders" data-bind="foreach: folders" style="width:52.7%">
+<ul style="margin-left:20%;margin-right:36%" class="folders" data-bind="foreach: folders" style="width:52.7%">
     <li data-bind="text: $data,
                    css: { selected: $data == $root.chosenFolderId()},
                    click: $root.goToFolder"></li>
 
 </ul>
+<hr>
 
 
 <div data-bind="visible: chosenFolderId() == 'Insureds',
