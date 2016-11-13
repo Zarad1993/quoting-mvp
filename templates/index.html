@@ -488,67 +488,89 @@
 	<div class="fatGreyTitles">Billing Method</div>
 	<b style="margin-left: 9%">Initial Invoice</b>
 	<div class="container" style="background-color:lightgrey;border: 20px grey red;border-radius: 10px;">
-			<br><br>
-			<div style="float: left;width:45%">
-				<b style="margin-left: 6%;">Bill Whom</b>
-				<select class="form-control" style="width:100%;margin-left: 6%;" data-bind="options: billingOptions, value: wayOfBilling"></select>
+		<br><br>
+		<div style="float: left;width:45%">
+			<b style="margin-left: 6%;">Bill Whom</b>
+			<select class="form-control" style="width:90%;margin-left: 6%;" data-bind="options: billWhom, value: billPerson"></select>
+		</div>
+		<div>
+			<b style="margin-left: 6%;float:left; ">Bill How</b>
+			<br>
+			<select class="form-control" style="width:40%;margin-left: 51%;" data-bind="options: billingOptions, value: wayOfBilling"></select>
+		</div>
+		<br>
+		<div style="clear:left"></div>
+		<span style="margin-left: 3%;" class="glyphicon glyphicon-plus cursor" data-bind="event: {click: addPaymentMethod }"></span>&nbsp;<span>Add A Payment Method</span>
+		<br><br>
+		<div class="container" style="margin-left:3%;background-color:#F2F2F2;border: 2px solid darkgrey;width:40%;float:left;border-radius: 10px;padding-left: 50px;">
+			<div style="width:90%">
+			<br>
+				<b style="margin-left:20%">Cash, Check, or Money Order</b>
+				<br><br>
+				<input type="radio" checked="checked"> &nbsp;&nbsp;Manually pay invoices.
+				<br><br>
+				<span>Reason</span><br>	
+				<input type="text" class="form-control" style="width:60%" name="reason">
 			</div>
-			<div>
-				<b style="margin-left: 6%;float:left; ">Bill How</b>
+			<div style="margin-bottom:2%;"></div>
+		</div>
+		<div class="container" style="margin-right:9%;background-color:#F2F2F2;border: 2px solid darkgrey;width:40%;float:right;border-radius: 10px;padding-left: 50px;">
+			<div style="width:45%">
 				<br>
-				<select class="form-control" style="width:45%;margin-left: 51%;" data-bind="options: billingOptions, value: wayOfBilling"></select>
+				<b style="margin-left: 25%;">Credit Card or ACH</b>
+				<br><br>
+				<span style="margin-left: 3%;" class="glyphicon glyphicon-plus cursor" data-bind="event: {click: addPaymentMethod }"></span>&nbsp;<span>Add a Credit Card</span>
+				<br><br>
+				<span style="margin-left: 3%;" class="glyphicon glyphicon-plus cursor" data-bind="event: {click: addPaymentMethod }"></span>&nbsp;<span>Add an ACH account</span>
+				<div style="margin-bottom:24%;"></div>	
 			</div>
-			<br>
-			<div style="clear:left"></div>
-			<span style="margin-left: 3%;" class="glyphicon glyphicon-plus cursor" data-bind="event: {click: addPaymentMethod }"></span>&nbsp;<span>Add A Payment Method</span>
-			<br>
-			<div class="container" style="margin-left:3%;background-color:#F2F2F2;border: 2px solid darkgrey;width:40%;float:left;border-radius: 10px;padding-left: 50px;">
-				<div style="width:45%">
-					<b style="margin-left: 7%;">Bill Whom</b>
-					<select class="form-control" style="width:100%;margin-left: 6%;" data-bind="options: billingOptions, value: wayOfBilling"></select>
-				</div>
-			</div>
-			<div class="container" style="margin-right:9%;background-color:#F2F2F2;border: 2px solid darkgrey;width:40%;float:right;border-radius: 10px;padding-left: 50px;">
-				<div style="width:45%">
-					<b style="margin-left: 6%;">Bill Whom</b>
-					<select class="form-control" style="width:100%;margin-left: 6%;" data-bind="options: billingOptions, value: wayOfBilling"></select>
-				</div>
-			</div>
-			<br>
-			<div style="clear:left;clear:right;margin-bottom:3%;"></div>
+		</div>
+		<br>
+		<div style="clear:left;clear:right;margin-bottom:3%;"></div>
 	</div>
 	<br><br>
 	<b style="margin-left: 9%">Future Invoice</b>
-	<div class="container" style="background-color:lightgrey;border: 20px grey red;border-radius: 10px;">
+		<div class="container" style="background-color:lightgrey;border: 20px grey red;border-radius: 10px;">
 			<br><br>
 			<div style="float: left;width:45%">
 				<b style="margin-left: 6%;">Bill Whom</b>
-				<select class="form-control" style="width:100%;margin-left: 6%;" data-bind="options: billingOptions, value: wayOfBilling"></select>
+				<select class="form-control" style="width:90%;margin-left: 6%;" data-bind="options: billWhom, value: billPerson"></select>
 			</div>
 			<div>
 				<b style="margin-left: 6%;float:left; ">Bill How</b>
 				<br>
-				<select class="form-control" style="width:45%;margin-left: 51%;" data-bind="options: billingOptions, value: wayOfBilling"></select>
+				<select class="form-control" style="width:40%;margin-left: 51%;" data-bind="options: billHowArray, value: billHow"></select>
 			</div>
 			<br>
 			<div style="clear:left"></div>
 			<span style="margin-left: 3%;" class="glyphicon glyphicon-plus cursor" data-bind="event: {click: addPaymentMethod }"></span>&nbsp;<span>Add A Payment Method</span>
-			<br>
+			<br><br>
 			<div class="container" style="margin-left:3%;background-color:#F2F2F2;border: 2px solid darkgrey;width:40%;float:left;border-radius: 10px;padding-left: 50px;">
-				<div style="width:45%">
-					<b style="margin-left: 7%;">Bill Whom</b>
-					<select class="form-control" style="width:100%;margin-left: 6%;" data-bind="options: billingOptions, value: wayOfBilling"></select>
+				<div style="width:90%">
+				<br>
+					<b style="margin-left:20%">Cash, Check, or Money Order</b>
+					<br><br>
+					<input type="radio" checked="checked"> &nbsp;&nbsp;Manually pay invoices.
+					<br><br>
+					<span>Reason</span><br>	
+					<input type="text" class="form-control" style="width:60%" name="reason">
 				</div>
+				<div style="margin-bottom:2%;"></div>
 			</div>
 			<div class="container" style="margin-right:9%;background-color:#F2F2F2;border: 2px solid darkgrey;width:40%;float:right;border-radius: 10px;padding-left: 50px;">
 				<div style="width:45%">
-					<b style="margin-left: 6%;">Bill Whom</b>
-					<select class="form-control" style="width:100%;margin-left: 6%;" data-bind="options: billingOptions, value: wayOfBilling"></select>
+					<br>
+					<b style="margin-left: 25%;">Credit Card or ACH</b>
+					<br><br>
+					<span style="margin-left: 3%;" class="glyphicon glyphicon-plus cursor" data-bind="event: {click: addPaymentMethod }"></span>&nbsp;<span>Add a Credit Card</span>
+					<br><br>
+					<span style="margin-left: 3%;" class="glyphicon glyphicon-plus cursor" data-bind="event: {click: addPaymentMethod }"></span>&nbsp;<span>Add an ACH account</span>
+					<div style="margin-bottom:24%;"></div>	
 				</div>
 			</div>
+			<br>
 			<div style="clear:left;clear:right;margin-bottom:3%;"></div>
 	</div>
-
 </script>
 
 <div data-bind="visible: chosenFolderId() == 'Attachments'">
