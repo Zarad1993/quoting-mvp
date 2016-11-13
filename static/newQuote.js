@@ -50,7 +50,7 @@ var QuotingViewModel = function(){
         location.hash = policy_view
         self.chosenFolderId(policy_view);
     };
-    self.goToFolder('Billing'); // By default be in the insureds Page
+    self.goToFolder('Submit'); // By default be in the insureds Page
 
     // Editable data
     self.insureds = ko.observableArray([
