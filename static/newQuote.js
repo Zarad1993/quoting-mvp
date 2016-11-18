@@ -7,8 +7,10 @@ function InsuredsPerson(name, namedTitle) {
     self.title = ko.observable(namedTitle);
 
     self.fullName = ko.computed(function(){
+        $('#retrieveContactFields').modal('hide');
         // Send API request and return some fake data. 
         if(self.name().length !== 0){
+            $('#retrieveContactFields').modal('toggle');
             // To  make a post request
             $.ajax("/Insureds", {
                 data: ko.toJSON({ test_name: self.name() }),
